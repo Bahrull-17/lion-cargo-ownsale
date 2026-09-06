@@ -12,9 +12,9 @@ export default function Hero() {
           {/* Kolom Kiri: Teks & CTA */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
             {/* Badge Highlight */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 text-xs font-bold tracking-wide uppercase border border-blue-200 dark:border-blue-800/50 shadow-xs mx-auto lg:mx-0">
-              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
-              <span>Official Cargo Resmi Bandara Soekarno Hatta</span>
+            <div className="flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 text-xs font-semibold tracking-wide uppercase border border-blue-200 dark:border-blue-800/50 shadow-xs w-fit mx-auto lg:mx-0">
+              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse shrink-0"></span>
+              <span className="text-center">Agen Cargo Resmi Bandara Soekarno Hatta</span>
             </div>
 
             {/* Headline Utama */}
@@ -26,73 +26,70 @@ export default function Hero() {
               Sebagai mitra resmi <strong className="font-bold text-slate-600 dark:text-white">Lion Cargo Ownsale</strong>, kami menghadirkan solusi pengiriman barang via{" "}
               <strong className="font-bold text-slate-600 dark:text-white">Bandara Soekarno Hatta</strong> (CGK) dengan tarif kompetitif dan jaminan keamanan tertinggi untuk kebutuhan bisnis maupun pribadi Anda.
             </p>
-
             {/* Fitur dengan Ikon yang Sesuai */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-1 max-w-2xl mx-auto lg:mx-0">
-              <div className="flex items-center space-x-3 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm">
+            {/* Fitur dengan Ikon yang Sesuai */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-1 max-w-md mx-auto lg:mx-0 justify-items-center">
+              <div className="flex items-center space-x-2.5 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm w-full">
                 <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
                   <Building2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span>Agen Cargo Resmi</span>
+                <span className="truncate">Agen Cargo Resmi</span>
               </div>
-              <div className="flex items-center space-x-3 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm">
+
+              <div className="flex items-center space-x-2.5 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm w-full">
                 <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
                   <ShieldIcon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span>100% Aman</span>
+                <span className="truncate">100% Aman</span>
               </div>
-              <div className="flex items-center space-x-3 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm">
+
+              <div className="flex items-center space-x-2.5 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm w-full">
                 <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
                   <Zap className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span>Pengiriman Cepat</span>
+                <span className="truncate">Pengiriman Cepat</span>
               </div>
-              <div className="flex items-center space-x-3 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm">
+
+              <div className="flex items-center space-x-2.5 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm w-full">
                 <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
                   <Tag className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <span>Harga Kompetitif</span>
+                <span className="truncate">Harga Kompetitif</span>
               </div>
             </div>
 
             {/* Tombol Aksi (CTA) */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2">
+              {/* Tombol Pertama: Cek Tarif & Layanan */}
               <a
                 href="#ongkir"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white bg-linear-to-r from-blue-700 via-blue-800 to-indigo-900 rounded-xl sm:rounded-2xl shadow-xl shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden border border-blue-500/30 dark:border-blue-400/30 cursor-pointer"
               >
-                {/* Efek kilau cahaya (shimmer) halus saat di-hover */}
                 <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
-
-                {/* Latar belakang gradasi sekunder untuk efek kedalaman */}
                 <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Konten Tombol */}
-                <span className="relative z-10 tracking-wide drop-shadow-xs text-center">Cek Tarif & Layanan</span>
+                <span className="relative z-10 tracking-wide drop-shadow-xs">Cek Tarif & Layanan</span>
                 <div className="relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300 shrink-0">
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                 </div>
               </a>
 
+              {/* Tombol Kedua: Hubungi Admin (WhatsApp) */}
               <a
                 href="https://wa.me/6287713951424?text=Halo%20Admin,%20saya%20tertarik%20ingin%20menggunakan%20jasa%20pengiriman%20Cargo%20Udara."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl sm:rounded-2xl shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
               >
-                {/* Efek kilau cahaya (shimmer) halus saat di-hover */}
                 <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-blue-500/10 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
 
-                {/* Ikon WhatsApp dengan latar belakang beranimasi */}
                 <div className="relative z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
                   <PhoneCall className="w-4 h-4 text-emerald-600 dark:text-emerald-400 group-hover:rotate-12 transition-transform duration-300" />
                 </div>
 
-                {/* Konten Teks */}
-                <span className="relative z-10 tracking-wide text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Hubungi Admin</span>
+                <span className="relative z-10 tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Hubungi Admin</span>
               </a>
             </div>
-
             {/* Info Keunggulan Singkat */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80">
               <div className="group relative flex flex-col items-center lg:items-start p-3.5 sm:p-5 rounded-2xl bg-linear-to-b from-white/80 to-slate-100/50 dark:from-slate-900/60 dark:to-slate-950/40 border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-900/3 dark:shadow-black/20 hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
