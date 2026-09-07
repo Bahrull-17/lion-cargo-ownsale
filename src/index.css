@@ -15,9 +15,3 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
-
-/* Mengaktifkan styling otomatis saat mode gelap aktif */
-.dark body {
-  background-color: #020617;
-  color: #f8fafc;
-}

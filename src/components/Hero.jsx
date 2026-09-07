@@ -76,7 +76,7 @@ export default function Hero() {
 
               {/* Tombol Kedua: Hubungi Admin (WhatsApp) */}
               <a
-                href="https://wa.me/6287713951424?text=Halo%20Admin,%20saya%20tertarik%20ingin%20menggunakan%20jasa%20pengiriman%20Cargo%20Udara."
+                href="https://wa.me/6285285586828?text=Halo%20Admin,%20saya%20tertarik%20ingin%20menggunakan%20jasa%20pengiriman%20Cargo%20Udara."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl sm:rounded-2xl shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
