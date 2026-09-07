@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X, MessageCircle } from "lucide-react";
+import logoImage from "../assets/images/logoownsale.png";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -34,17 +35,19 @@ export default function Navbar() {
     { label: "Kontak", href: "#kontak" },
   ];
 
+  const whatsappNumber = "6285285586828";
+  const whatsappMessage = encodeURIComponent("Halo, saya ingin bertanya mengenai layanan pengiriman kargo udara.");
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   return (
     <header className="sticky top-0 z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-white/20 dark:border-slate-800/50 shadow-lg shadow-slate-900/5 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Brand */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-900 dark:bg-blue-800 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-900/20">✈️</div>
-            <div>
-              <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white">LION CARGO</span>
-              <span className="block text-[10px] font-bold tracking-widest text-blue-700 dark:text-blue-400 uppercase">Ownsale Partner</span>
-            </div>
+          {/* Logo Brand (Kecil di HP: h-10, Besar di Laptop: sm:h-16) */}
+          <div className="flex items-center">
+            <a href="#beranda" className="flex items-center">
+              <img src={logoImage} alt="Logo Lion Cargo Ownsale" className="h-10 sm:h-16 w-auto object-contain rounded-xl sm:rounded-2xl shadow-md transition-transform hover:scale-105" />
+            </a>
           </div>
 
           {/* Menu Navigasi (Desktop) */}
@@ -78,10 +81,12 @@ export default function Navbar() {
             </button>
 
             <a
-              href="#kontak"
-              className="h-11 px-5 flex items-center text-sm font-semibold text-white bg-linear-to-r from-blue-900 to-blue-800 dark:from-blue-800 dark:to-blue-700 rounded-xl hover:opacity-95 hover:scale-105 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-blue-900/25 active:scale-95"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-11 px-5 flex items-center gap-2 text-sm font-semibold text-white bg-linear-to-r from-blue-900 to-blue-800 dark:from-blue-800 dark:to-blue-700 rounded-xl hover:opacity-95 hover:scale-105 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-blue-900/25 active:scale-95"
             >
-              Hubungi Kami
+              <span>Hubungi Kami</span>
             </a>
           </div>
 
@@ -136,14 +141,17 @@ export default function Navbar() {
           })}
           <div className="pt-3">
             <a
-              href="#kontak"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 setActiveMenu("#kontak");
                 setIsMobileMenuOpen(false);
               }}
-              className="block w-full text-center px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-900 to-blue-800 dark:from-blue-800 dark:to-blue-700 rounded-xl hover:opacity-95 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-blue-900/25 active:scale-95"
+              className="flex items-center justify-center gap-2 w-full text-center px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-900 to-blue-800 dark:from-blue-800 dark:to-blue-700 rounded-xl hover:opacity-95 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-blue-900/25 active:scale-95"
             >
-              Hubungi Kami
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>Hubungi Kami</span>
             </a>
           </div>
         </div>

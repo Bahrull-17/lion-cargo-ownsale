@@ -9,6 +9,8 @@ import garudaImg from "../assets/images/garuda.png";
 import lionImg from "../assets/images/lion.png";
 import sriwijayaImg from "../assets/images/sriwijaya.png";
 import wingsImg from "../assets/images/wings.png";
+import rimbunImg from "../assets/images/rimbun.png";
+import ecaImg from "../assets/images/eca.png";
 
 export default function AirlinePartners() {
   const airlines = [
@@ -19,6 +21,8 @@ export default function AirlinePartners() {
     { name: "Sriwijaya Air", logo: sriwijayaImg, desc: "Rute Kepulauan Luas" },
     { name: "Wings Air", logo: wingsImg, desc: "Kargo Daerah Perintis" },
     { name: "AirAsia Cargo", logo: airasiaImg, desc: "Jaringan Regional Asia" },
+    { name: "Rimbun Air Cargo", logo: rimbunImg, desc: "Spesialis Pengiriman Wilayah Khusus" },
+    { name: "Eca Air Cargo", logo: ecaImg, desc: "Layanan Kargo Fleksibel" },
   ];
 
   return (
