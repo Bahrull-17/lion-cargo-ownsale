@@ -92,41 +92,32 @@ export default function CekOngkirSection({ isOpen, onClose }) {
         {/* Body Modal (Bisa di-scroll dengan aman di HP) */}
         <div className="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1">
           <form onSubmit={handleCalculate} className="space-y-4">
-            {/* Input Kota Asal */}
+            {/* Input Kota Asal (Menggunakan Wrapper Flex Profesional) */}
             <div className="space-y-1.5">
               <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">Kota Asal Pengiriman</label>
-              <div className="relative flex items-center">
-                <span className="absolute left-3.5 text-blue-600 dark:text-blue-400">
-                  <MapPin className="w-4 h-4" />
-                </span>
-                <input
-                  type="text"
-                  value={origin}
-                  disabled
-                  className="w-full pl-10 pr-3 py-2.5 sm:py-3 bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-600 dark:text-slate-400 cursor-not-allowed font-medium truncate"
-                />
+              <div className="flex items-center w-full bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden px-3.5 py-2.5 sm:py-3">
+                <MapPin className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0 mr-3" />
+                <input type="text" value={origin} disabled className="w-full bg-transparent text-xs sm:text-sm text-slate-600 dark:text-slate-400 cursor-not-allowed font-medium truncate focus:outline-none" />
               </div>
               <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 pl-1">*Pengiriman diproses langsung melalui Hub Utama Bandara Soekarno Hatta (CGK).</p>
             </div>
 
-            {/* Input Kota Tujuan */}
+            {/* Input Kota Tujuan (Menggunakan Wrapper Flex Profesional - Aman di Semua HP) */}
             <div className="space-y-1.5">
               <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
                 Kota Tujuan / Bandara Tujuan <span className="text-red-500">*</span>
               </label>
-              <div className="relative flex items-center">
-                <span className="absolute left-3.5 text-slate-400">
-                  <Plane className="w-4 h-4 rotate-90" />
-                </span>
+              <div className="flex items-center w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden px-3.5 py-2 sm:py-2.5 focus-within:ring-2 focus-within:ring-blue-600 transition-all">
+                <Plane className="w-4 h-4 rotate-90 text-slate-400 shrink-0 mr-3" />
                 <select
                   value={destinationCode}
                   onChange={(e) => setDestinationCode(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all truncate"
+                  className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none truncate cursor-pointer py-1"
                   required
                 >
                   <option value="">-- Pilih Kota / Bandara Tujuan --</option>
                   {uniqueDestinations.map((item) => (
-                    <option key={item.dest} value={item.dest}>
+                    <option key={item.dest} value={item.dest} className="dark:bg-slate-900">
                       {item.namaDest}
                     </option>
                   ))}
@@ -140,17 +131,15 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                 <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Berat Barang (KG) <span className="text-red-500">*</span>
                 </label>
-                <div className="relative flex items-center">
-                  <span className="absolute left-3.5 text-slate-400">
-                    <Scale className="w-4 h-4" />
-                  </span>
+                <div className="flex items-center w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden px-3.5 py-2.5 sm:py-3 focus-within:ring-2 focus-within:ring-blue-600 transition-all">
+                  <Scale className="w-4 h-4 text-slate-400 shrink-0 mr-3" />
                   <input
                     type="number"
                     min="10"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Minimal 10 KG"
-                    className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                    className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none"
                     required
                   />
                 </div>
@@ -160,23 +149,38 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                 </div>
               </div>
 
-              {/* Pilihan Maskapai */}
+              {/* Pilihan Maskapai (Menggunakan Wrapper Flex Profesional) */}
               <div className="space-y-1.5">
                 <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">Pilihan Maskapai</label>
-                <select
-                  value={selectedMaskapai}
-                  onChange={(e) => setSelectedMaskapai(e.target.value)}
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all truncate"
-                >
-                  <option value="all">Semua Maskapai Tersedia</option>
-                  <option value="Lion Air">Lion Air</option>
-                  <option value="Citilink Hasus">Citilink Hasus</option>
-                  <option value="Pelita Air">Pelita Air</option>
-                  <option value="Rimbun Air">Rimbun Air</option>
-                  <option value="Eca Air">Eca Air</option>
-                  <option value="Air Asia">Air Asia</option>
-                  <option value="Myi">Myi</option>
-                </select>
+                <div className="flex items-center w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl overflow-hidden px-3.5 py-2 sm:py-2.5 focus-within:ring-2 focus-within:ring-blue-600 transition-all">
+                  <Package className="w-4 h-4 text-slate-400 shrink-0 mr-3" />
+                  <select value={selectedMaskapai} onChange={(e) => setSelectedMaskapai(e.target.value)} className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none truncate cursor-pointer py-1">
+                    <option value="all" className="dark:bg-slate-900">
+                      Semua Maskapai Tersedia
+                    </option>
+                    <option value="Lion Air" className="dark:bg-slate-900">
+                      Lion Air
+                    </option>
+                    <option value="Citilink Hasus" className="dark:bg-slate-900">
+                      Citilink Hasus
+                    </option>
+                    <option value="Pelita Air" className="dark:bg-slate-900">
+                      Pelita Air
+                    </option>
+                    <option value="Rimbun Air" className="dark:bg-slate-900">
+                      Rimbun Air
+                    </option>
+                    <option value="Eca Air" className="dark:bg-slate-900">
+                      Eca Air
+                    </option>
+                    <option value="Air Asia" className="dark:bg-slate-900">
+                      Air Asia
+                    </option>
+                    <option value="Myi" className="dark:bg-slate-900">
+                      Myi
+                    </option>
+                  </select>
+                </div>
               </div>
             </div>
 
