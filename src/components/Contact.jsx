@@ -24,14 +24,31 @@ export default function ContactSection() {
           {/* Kolom Informasi Kontak (5 Kolom) */}
           <div className="lg:col-span-5 space-y-4">
             {/* Alamat */}
-            <div className="bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
-                <MapPin className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1">Alamat Kantor</h3>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Kawasan Bandara Internasional Soekarno-Hatta, Cargo Area, Tangerang, Banten, Indonesia.</p>
-              </div>
+            <div className="space-y-3">
+              {/* Judul / Label */}
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Kantor Pusat & Drop Point</h4>
+
+              {/* Alamat yang bisa diklik langsung ke Google Maps */}
+              <a
+                href="https://www.google.com/maps/place/GEDUNG+PT+GATRANS/@-6.1252053,106.6651638,17z/data=!4m6!3m5!1s0x2e6a036700943607:0xb4debe87ebce550c!8m2!3d-6.1252053!4d106.6651638!16s%2Fg%2F11hz6qk2vn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 rounded-lg bg-blue-600/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1 flex-1">
+                    <p className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Gedung PT Gatrans (Area Kargo Bandara Soekarno-Hatta)</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Jl. Cengkareng, Pajang, Kec. Benda, Kota Tangerang, Banten</p>
+                    <div className="inline-flex items-center gap-1 pt-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                      <span>Buka di Google Maps</span>
+                      <Send className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
 
             {/* Telepon */}
@@ -62,15 +79,21 @@ export default function ContactSection() {
             </div>
 
             {/* Email */}
-            <div className="bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=cargolionownsale@gmail.com&su=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40 hover:shadow-md cursor-pointer"
+            >
+              <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1">Email Resmi</h3>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">support@lioncargoownsale.com</p>
+                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Resmi</h3>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">cargolionownsale@gmail.com</p>
+                <span className="inline-block text-[10px] text-blue-600 dark:text-blue-400 font-semibold mt-1">Kirim Email Sekarang →</span>
               </div>
-            </div>
+            </a>
 
             {/* Jam Operasional */}
             <div className="bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40">
@@ -79,10 +102,10 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1">Jam Operasional</h3>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">
-                  Senin - Sabtu: 08.00 - 17.00 WIB
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <span className="font-semibold text-slate-900 dark:text-white">Senin - Minggu: 24 Jam (Tanpa Libur)</span>
                   <br />
-                  <span className="text-blue-600 dark:text-blue-400 font-medium">Layanan Kargo Darurat / 24 Jam via WhatsApp</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-medium">Siap Melayani Pengiriman & Konsultasi Kargo Setiap Saat</span>
                 </p>
               </div>
             </div>
@@ -95,7 +118,8 @@ export default function ContactSection() {
                 {/* Embed Google Maps Area Kargo Bandara Soekarno-Hatta */}
                 <iframe
                   title="Peta Lokasi Kantor Bandara Soekarno Hatta"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666324083544!2d106.6570!3d-6.1250!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a02b55b555555%3A0x5555555555555555!2sSoekarno-Hatta%20International%20Airport!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6976695276226!2d106.66258887483015!3d-6.125200060471243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a036700943607%3A0xb4debe87ebce550c!2sGEDUNG%20PT%20GATRANS!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                  width="100%"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -111,7 +135,7 @@ export default function ContactSection() {
                   Kawasan Cargo Area Bandara Soekarno-Hatta
                 </span>
                 <a
-                  href="https://maps.google.com/?q=Soekarno-Hatta+International+Airport+Cargo"
+                  href="https://www.google.com/maps/place/GEDUNG+PT+GATRANS/@-6.125061,106.665276,19z/data=!4m6!3m5!1s0x2e6a036700943607:0xb4debe87ebce550c!8m2!3d-6.1252053!4d106.6651638!16s%2Fg%2F11hz6qk2vn?hl=id&entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 font-semibold hover:underline"

@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, ShieldCheck, Clock, MapPin, PhoneCall, PlaneTakeoff, Plane, Package, Building2, ShieldCheck as ShieldIcon, Zap, Tag } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({ onOpenCekOngkir }) {
   return (
     <section id="beranda" className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-24 transition-colors duration-300">
       {/* Background Accent Gradients */}
@@ -60,9 +60,10 @@ export default function Hero() {
 
             {/* Tombol Aksi (CTA) */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2">
-              {/* Tombol Pertama: Cek Tarif & Layanan */}
-              <a
-                href="#ongkir"
+              {/* Tombol Pertama: Cek Tarif & Layanan (Memicu Modal Cek Ongkir) */}
+              <button
+                type="button"
+                onClick={onOpenCekOngkir}
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white bg-linear-to-r from-blue-700 via-blue-800 to-indigo-900 rounded-xl sm:rounded-2xl shadow-xl shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden border border-blue-500/30 dark:border-blue-400/30 cursor-pointer"
               >
                 <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
@@ -72,7 +73,7 @@ export default function Hero() {
                 <div className="relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300 shrink-0">
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                 </div>
-              </a>
+              </button>
 
               {/* Tombol Kedua: Hubungi Admin (WhatsApp) */}
               <a
