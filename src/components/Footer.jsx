@@ -1,9 +1,16 @@
 import React from "react";
-import { Plane, MapPin, Phone, Mail, Clock, ArrowUp, Heart } from "lucide-react";
+import { Plane, MapPin, Phone, Mail, ArrowUp, Heart } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ onOpenCekOngkir }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleClickCekOngkir = (e) => {
+    e.preventDefault();
+    if (typeof onOpenCekOngkir === "function") {
+      onOpenCekOngkir();
+    }
   };
 
   return (
@@ -13,7 +20,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
-          {/* Kolom 1: Brand & Deskripsi (4 Kolom) */}
+          {/* Kolom 1: Brand & Deskripsi */}
           <div className="lg:col-span-4 space-y-4">
             <a href="#beranda" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-600/30 group-hover:bg-blue-500 transition-colors">
@@ -28,14 +35,14 @@ export default function Footer() {
             </a>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">Mitra agen pengiriman kargo udara resmi, terpercaya, dan profesional berpusat di Bandara Internasional Soekarno-Hatta melayani rute domestik seluruh Indonesia.</p>
             <div className="pt-2 flex items-center gap-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold border border-blue-500/20">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold border border-blue-500/25">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 Operasional 24/7 via WhatsApp
               </span>
             </div>
           </div>
 
-          {/* Kolom 2: Tautan Cepat (2 Kolom) */}
+          {/* Kolom 2: Tautan Cepat / Navigasi */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Navigasi</h3>
             <ul className="space-y-2.5 text-xs">
@@ -50,14 +57,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#cek-ongkir" className="hover:text-blue-400 transition-colors">
+                {/* Tombol Cek Ongkir di Footer yang terhubung ke modal */}
+                <button type="button" onClick={handleClickCekOngkir} className="hover:text-blue-400 transition-colors bg-transparent border-none p-0 cursor-pointer text-left font-inherit text-slate-400">
                   Cek Ongkir
-                </a>
-              </li>
-              <li>
-                <a href="#lacak" className="hover:text-blue-400 transition-colors">
-                  Lacak Resi
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#tentang" className="hover:text-blue-400 transition-colors">
@@ -72,7 +75,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kolom 3: Layanan Utama (3 Kolom) */}
+          {/* Kolom 3: Layanan Utama */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Layanan Unggulan</h3>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -95,21 +98,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kolom 4: Ringkasan Kontak (3 Kolom) */}
+          {/* Kolom 4: Ringkasan Kontak */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Kantor Pusat</h3>
             <ul className="space-y-3 text-xs">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                <span className="text-slate-400 leading-relaxed">Cargo Area, Bandara Internasional Soekarno-Hatta, Tangerang, Banten</span>
+                <a
+                  href="https://www.google.com/maps/place/GEDUNG+PT+GATRANS/@-6.1252053,106.6651638,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-blue-400 transition-colors leading-relaxed font-medium"
+                >
+                  Gedung PT Gatrans (Cargo Area, Bandara Internasional Soekarno-Hatta, Tangerang, Banten)
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span className="text-slate-400">+62 852-8558-6828</span>
+                <a href="https://wa.me/6285285586828" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-emerald-400 transition-colors font-medium">
+                  +62 852-8558-6828
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
-                <span className="text-slate-400">support@lioncargoownsale.com</span>
+                <a href="mailto:cargolionownsale@gmail.com" className="text-slate-400 hover:text-blue-400 transition-colors font-medium">
+                  cargolionownsale@gmail.com
+                </a>
               </li>
             </ul>
           </div>
