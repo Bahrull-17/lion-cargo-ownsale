@@ -61,37 +61,37 @@ export default function CekOngkirSection({ isOpen, onClose }) {
   };
 
   return (
-    <div id="cek-ongkir" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
+    <div id="cek-ongkir" className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
       {/* Backdrop / Background Gelap */}
-      <div className="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" onClick={onClose} />
+      <div className="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity" onClick={onClose} />
 
       {/* Kontainer Modal Utama */}
-      <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 z-10 overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 z-10 overflow-hidden flex flex-col max-h-[92vh] sm:max-h-[90vh]">
         {/* Header Modal */}
-        <div className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-600/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 shrink-0">
+          <div className="flex items-center space-x-3 pr-2">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
               <Plane className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Cek Tarif & Layanan Cargo</h2>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Estimasi biaya pengiriman udara cepat & terpercaya</p>
+              <h2 className="text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">Cek Tarif & Layanan Cargo</h2>
+              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Estimasi biaya pengiriman udara cepat & terpercaya</p>
             </div>
           </div>
 
           <button
             onClick={onClose}
             type="button"
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-200/80 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-red-500 hover:text-white dark:hover:bg-red-600 transition-all duration-200 cursor-pointer shadow-xs shrink-0"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-200/80 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-red-500 hover:text-white dark:hover:bg-red-600 transition-all duration-200 cursor-pointer shadow-xs shrink-0"
             aria-label="Tutup Modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Body Modal */}
-        <div className="p-5 sm:p-6 overflow-y-auto space-y-6">
-          <form onSubmit={handleCalculate} className="space-y-4 sm:space-y-5">
+        {/* Body Modal (Bisa di-scroll dengan aman di HP) */}
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1">
+          <form onSubmit={handleCalculate} className="space-y-4">
             {/* Input Kota Asal */}
             <div className="space-y-1.5">
               <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">Kota Asal Pengiriman</label>
@@ -103,10 +103,10 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                   type="text"
                   value={origin}
                   disabled
-                  className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-600 dark:text-slate-400 cursor-not-allowed font-medium"
+                  className="w-full pl-10 pr-3 py-2.5 sm:py-3 bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-600 dark:text-slate-400 cursor-not-allowed font-medium truncate"
                 />
               </div>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 pl-1">*Semua pengiriman diproses langsung melalui Hub Utama Bandara Soekarno Hatta (CGK).</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 pl-1">*Pengiriman diproses langsung melalui Hub Utama Bandara Soekarno Hatta (CGK).</p>
             </div>
 
             {/* Input Kota Tujuan */}
@@ -121,7 +121,7 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                 <select
                   value={destinationCode}
                   onChange={(e) => setDestinationCode(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                  className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all truncate"
                   required
                 >
                   <option value="">-- Pilih Kota / Bandara Tujuan --</option>
@@ -135,7 +135,7 @@ export default function CekOngkirSection({ isOpen, onClose }) {
             </div>
 
             {/* Input Berat & Filter Maskapai */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
               <div className="space-y-1.5">
                 <label className="block text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">
                   Berat Barang (KG) <span className="text-red-500">*</span>
@@ -154,9 +154,9 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                     required
                   />
                 </div>
-                <div className="flex items-center space-x-1 text-[11px] text-amber-600 dark:text-amber-400 pl-1 font-medium">
+                <div className="flex items-center space-x-1 text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400 pl-1 font-medium">
                   <AlertCircle className="w-3 h-3 shrink-0" />
-                  <span>Ketentuan minimum kargo udara adalah 10 KG.</span>
+                  <span>Minimum kargo udara adalah 10 KG.</span>
                 </div>
               </div>
 
@@ -166,7 +166,7 @@ export default function CekOngkirSection({ isOpen, onClose }) {
                 <select
                   value={selectedMaskapai}
                   onChange={(e) => setSelectedMaskapai(e.target.value)}
-                  className="w-full px-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all truncate"
                 >
                   <option value="all">Semua Maskapai Tersedia</option>
                   <option value="Lion Air">Lion Air</option>
@@ -184,70 +184,72 @@ export default function CekOngkirSection({ isOpen, onClose }) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-2 py-3.5 px-6 bg-linear-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white font-bold text-sm sm:text-base rounded-xl shadow-lg shadow-blue-600/30 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer active:scale-[0.99]"
+              className="w-full mt-1 py-3 px-5 bg-linear-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-600/30 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer active:scale-[0.99]"
             >
               {loading ? (
                 <span>Menghitung Tarif...</span>
               ) : (
                 <>
                   <span>Cek Estimasi Tarif Sekarang</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </>
               )}
             </button>
           </form>
 
-          {/* Bagian Hasil Pengecekan Tarif dengan Tampilan Detail */}
+          {/* Bagian Hasil Pengecekan Tarif */}
           {resultList.length > 0 && (
-            <div className="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 space-y-4 animate-fadeIn">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+            <div className="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3.5 animate-fadeIn">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white flex items-center space-x-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                   <span>Hasil Tarif Berdasarkan Maskapai</span>
                 </h3>
-                <span className="text-xs px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-800">Berat: {Math.max(Number(weight) || 10, 10)} KG</span>
+                <span className="text-[11px] px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold border border-blue-200 dark:border-blue-800">
+                  Berat: {Math.max(Number(weight) || 10, 10)} KG
+                </span>
               </div>
 
-              <div className="grid grid-cols-1 gap-3.5 max-h-80 overflow-y-auto pr-1">
+              <div className="grid grid-cols-1 gap-3 max-h-72 overflow-y-auto pr-1">
                 {resultList.map((res) => (
-                  <div key={res.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-3 shadow-xs">
+                  <div key={res.id} className="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-3 shadow-2xs">
                     {/* Header Kartu Maskapai */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">{res.maskapai}</span>
-                        <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">{res.namaDest}</span>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">{res.maskapai}</span>
+                        <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 truncate max-w-36 sm:max-w-xs">{res.namaDest}</span>
                       </div>
-                      <span className="text-[11px] bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded font-medium">{res.estimatedTime}</span>
+                      <span className="text-[10px] sm:text-[11px] bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded font-medium shrink-0">{res.estimatedTime}</span>
                     </div>
 
                     {/* Rincian Komponen Biaya */}
-                    <div className="text-xs space-y-1.5 py-2.5 border-y border-slate-200/80 dark:border-slate-700 text-slate-600 dark:text-slate-400">
-                      <div className="flex justify-between">
-                        <span>
+                    <div className="text-[11px] sm:text-xs space-y-1.5 py-2.5 border-y border-slate-200/80 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+                      <div className="flex justify-between gap-2">
+                        <span className="truncate pr-2">
                           Tarif Dasar ({Math.max(Number(weight) || 10, 10)} KG × Rp {res.rateReguler.toLocaleString("id-ID")})
                         </span>
-                        <span className="font-medium text-slate-900 dark:text-white">Rp {res.subtotalBerat.toLocaleString("id-ID")}</span>
+                        <span className="font-medium text-slate-900 dark:text-white shrink-0">Rp {res.subtotalBerat.toLocaleString("id-ID")}</span>
                       </div>
-                      <div className="flex justify-between">
+                      <div className="flex justify-between gap-2">
                         <span>Biaya Admin / Penanganan</span>
-                        <span className="font-medium text-slate-900 dark:text-white">Rp {res.biayaAdmin.toLocaleString("id-ID")}</span>
+                        <span className="font-medium text-slate-900 dark:text-white shrink-0">Rp {res.biayaAdmin.toLocaleString("id-ID")}</span>
                       </div>
                     </div>
 
                     {/* Total Biaya & Tombol WhatsApp */}
-                    <div className="flex items-center justify-between pt-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
                       <div>
                         <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wide">Total Biaya Keseluruhan</div>
-                        <div className="text-lg sm:text-xl font-black text-blue-700 dark:text-blue-400">Rp {res.totalCost.toLocaleString("id-ID")}</div>
+                        <div className="text-base sm:text-lg font-black text-blue-700 dark:text-blue-400">Rp {res.totalCost.toLocaleString("id-ID")}</div>
                       </div>
 
                       <a
                         href={`https://wa.me/6285285586828?text=Halo%20Admin,%20saya%20ingin%20memesan%20pengiriman%20kargo%20menggunakan%20${encodeURIComponent(res.maskapai)}%20tujuan%20${encodeURIComponent(res.namaDest)}%20dengan%20berat%20${Math.max(Number(weight) || 10, 10)}%20KG.%20Total%20biaya%20Rp%20${res.totalCost.toLocaleString("id-ID")}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center shrink-0 cursor-pointer"
+                        className="w-full sm:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center shrink-0 cursor-pointer"
                       >
-                        Pilih via WA
+                        Pilih via WhatsApp
                       </a>
                     </div>
                   </div>
