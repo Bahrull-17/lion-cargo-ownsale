@@ -83,7 +83,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Resmi</h3>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">cargolionownsale@gmail.com</p>
+                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">support@lioncargoownsale.com</p>
                 <span className="inline-block text-[10px] text-blue-600 dark:text-blue-400 font-semibold mt-1">Kirim Email Sekarang →</span>
               </div>
             </a>
