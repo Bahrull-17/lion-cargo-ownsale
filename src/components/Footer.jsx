@@ -130,13 +130,13 @@ export default function Footer({ onOpenCekOngkir }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-8 flex flex-col items-center justify-center text-center gap-2 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} Lion Cargo Ownsale. Hak Cipta Dilindungi Undang-Undang.</p>
-
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1">
+          <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-2 sm:gap-6">
+            <span className="flex items-center justify-center gap-1">
               Dibuat dengan <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> untuk Pengiriman Terbaik
             </span>
+
             <button onClick={scrollToTop} className="p-2 rounded-xl bg-slate-900 hover:bg-blue-600 text-slate-400 hover:text-white transition-all duration-300 border border-slate-800 shadow-sm cursor-pointer" title="Kembali ke atas">
               <ArrowUp className="w-4 h-4" />
             </button>
