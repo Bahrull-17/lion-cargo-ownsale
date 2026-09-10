@@ -39,7 +39,7 @@ export default function AirlinePartners() {
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Beroperasi secara terintegrasi dengan maskapai penerbangan kargo nasiona pilihan guna memastikan alokasi ruang muat prioritas, keamanan kargo maksimal, dan ketepatan jadwal pengiriman.
+            Beroperasi secara terintegrasi dengan maskapai penerbangan kargo nasional pilihan guna memastikan alokasi ruang muat prioritas, keamanan kargo maksimal, dan ketepatan jadwal pengiriman.
           </p>
         </div>
 
