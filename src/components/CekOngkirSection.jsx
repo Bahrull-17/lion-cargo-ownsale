@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { X, Plane, MapPin, Scale, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
-// Impor database tarif dari folder src/data/
+
 import { databaseTarif } from "../data/tarifData";
 
 export default function CekOngkirSection({ isOpen, onClose }) {
@@ -16,13 +16,11 @@ export default function CekOngkirSection({ isOpen, onClose }) {
   // Ambil daftar kota tujuan unik dari databaseTarif untuk pilihan <select>
   const uniqueDestinations = Array.from(new Map(databaseTarif.map((item) => [item.dest, { dest: item.dest, namaDest: item.namaDest }])).values()).sort((a, b) => a.namaDest.localeCompare(b.namaDest));
 
-  // Fungsi helper untuk membersihkan teks dalam kurung di namaDest (misal: "BAJAWA (BJW)" menjadi "BAJAWA")
   const formatCityName = (namaDest) => {
     if (!namaDest) return "";
     return namaDest.replace(/\s*\([^)]*\)/g, "").trim();
   };
 
-  // Jika modal tertutup, jangan render apa pun
   if (!isOpen) return null;
 
   const handleCalculate = (e) => {
@@ -36,9 +34,8 @@ export default function CekOngkirSection({ isOpen, onClose }) {
 
     setTimeout(() => {
       const finalWeight = Math.max(Number(weight) || 10, 10);
-      const biayaAdmin = 30000; // Biaya tambahan penanganan tetap
+      const biayaAdmin = 30000; //
 
-      // Filter data berdasarkan kode destinasi yang dipilih
       const filteredData = databaseTarif.filter((item) => item.dest === destinationCode);
 
       // Hitung subtotal berat dan tambahkan biaya admin ke total keseluruhan
@@ -73,9 +70,9 @@ export default function CekOngkirSection({ isOpen, onClose }) {
             <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
               <Plane className="w-5 h-5" />
             </div>
-            <div className="min-w-0">
-              <h2 className="text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight truncate">Cek Tarif & Layanan Cargo</h2>
-              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 truncate">Estimasi biaya pengiriman udara cepat & terpercaya</p>
+            <div className="min-w-0 flex-1">
+              <h2 className="text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">Cek Tarif & Layanan Cargo</h2>
+              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5">Estimasi biaya pengiriman udara cepat & terpercaya</p>
             </div>
           </div>
 

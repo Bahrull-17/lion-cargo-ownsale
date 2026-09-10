@@ -15,12 +15,10 @@ export default function Footer({ onOpenCekOngkir }) {
 
   return (
     <footer className="bg-slate-950 text-slate-400 text-xs sm:text-sm pt-14 pb-8 border-t border-slate-800/80 relative overflow-hidden">
-      {/* Background Accent Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-blue-500 to-transparent opacity-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
-          {/* Kolom 1: Brand & Deskripsi */}
           <div className="lg:col-span-4 space-y-4">
             <a href="#beranda" className="flex items-center gap-2.5 group">
               <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-600/30 group-hover:bg-blue-500 transition-colors">
@@ -42,7 +40,6 @@ export default function Footer({ onOpenCekOngkir }) {
             </div>
           </div>
 
-          {/* Kolom 2: Tautan Cepat / Navigasi */}
           <div className="lg:col-span-2 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Navigasi</h3>
             <ul className="space-y-2.5 text-xs">
@@ -57,7 +54,6 @@ export default function Footer({ onOpenCekOngkir }) {
                 </a>
               </li>
               <li>
-                {/* Tombol Cek Ongkir di Footer yang terhubung ke modal */}
                 <button type="button" onClick={handleClickCekOngkir} className="hover:text-blue-400 transition-colors bg-transparent border-none p-0 cursor-pointer text-left font-inherit text-slate-400">
                   Cek Ongkir
                 </button>
@@ -75,7 +71,6 @@ export default function Footer({ onOpenCekOngkir }) {
             </ul>
           </div>
 
-          {/* Kolom 3: Layanan Utama */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Layanan Unggulan</h3>
             <ul className="space-y-2.5 text-xs text-slate-400">
@@ -98,7 +93,6 @@ export default function Footer({ onOpenCekOngkir }) {
             </ul>
           </div>
 
-          {/* Kolom 4: Ringkasan Kontak */}
           <div className="lg:col-span-3 space-y-4">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Kantor Pusat</h3>
             <ul className="space-y-3 text-xs">
@@ -129,7 +123,6 @@ export default function Footer({ onOpenCekOngkir }) {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 flex flex-col items-center justify-center text-center gap-2 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} Lion Cargo Ownsale. Hak Cipta Dilindungi Undang-Undang.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-2 sm:gap-6">
