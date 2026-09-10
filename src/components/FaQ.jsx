@@ -47,7 +47,6 @@ export default function FAQSection() {
   return (
     <section id="faq" className="py-12 sm:py-16 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-2 border border-blue-500/20 shadow-xs backdrop-blur-md">
             <HelpCircle className="w-3 h-3 text-blue-600 dark:text-blue-400" />
@@ -59,7 +58,6 @@ export default function FAQSection() {
           <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mx-auto">Temukan jawaban lengkap seputar prosedur, layanan, dan informasi pengiriman kargo udara bersama kami.</p>
         </div>
 
-        {/* FAQ Accordion List */}
         <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -88,7 +86,6 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* Call to Action Box */}
         <div className="mt-10 sm:mt-12 text-center bg-blue-50 dark:bg-slate-800/50 border border-blue-100 dark:border-slate-700/80 p-6 sm:p-8 rounded-3xl shadow-xs">
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2">Masih ada pertanyaan?</h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-5 max-w-md mx-auto">Hubungi kami untuk informasi lebih lanjut mengenai pengiriman kargo udara Anda.</p>

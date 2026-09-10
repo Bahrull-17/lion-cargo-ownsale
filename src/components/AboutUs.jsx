@@ -4,11 +4,8 @@ import { ShieldCheck, Globe2, Clock, ArrowUpRight, Building2 } from "lucide-reac
 export default function AboutSection() {
   return (
     <section className="relative py-10 sm:py-14 bg-slate-50/50 dark:bg-slate-950/50 transition-colors duration-300 overflow-hidden" id="tentang">
-      {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-400/10 dark:bg-blue-600/5 blur-[120px] pointer-events-none rounded-full" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Bagian */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-xs font-bold tracking-wider uppercase mb-2.5 border border-blue-500/20 shadow-xs backdrop-blur-md">
             <Building2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
@@ -26,9 +23,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Grid Konten Utama dengan Kartu Berbingkai Konsisten */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Kartu 1: Jaringan Rute Luas */}
           <div className="group relative bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-500/50 dark:hover:border-blue-400/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div>
@@ -43,8 +38,6 @@ export default function AboutSection() {
               <ArrowUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
-
-          {/* Kartu 2: Standar Keamanan Ketat */}
           <div className="group relative bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 hover:border-amber-500/50 dark:hover:border-amber-400/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-amber-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div>
@@ -60,7 +53,6 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Kartu 3: Kecepatan & Ketepatan */}
           <div className="group relative bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-500/50 dark:hover:border-blue-400/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-indigo-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div>

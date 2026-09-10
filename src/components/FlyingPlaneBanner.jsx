@@ -72,7 +72,6 @@ export default function CargoFlightBanner() {
       `}</style>
 
       <div className="cargo-anim max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* ============= DESKTOP ============= */}
         <div className="hidden sm:block relative w-full h-40">
           <div className="instrument-grid absolute inset-0" />
 
@@ -164,7 +163,6 @@ export default function CargoFlightBanner() {
           <div className="telemetry-b absolute left-[54%] top-[84%] font-mono text-[9px] text-slate-400 bg-[#0A1330]/80 border border-slate-700/60 rounded px-1 py-0.5">2.450 KG</div>
         </div>
 
-        {/* ============= Baris statistik instrumen ============= */}
         <div className="mt-5 sm:mt-6 flex items-center justify-center divide-x divide-slate-700/60">
           <div className="flex flex-col items-center px-4 sm:px-8">
             <div className="flex items-center gap-1.5 font-mono text-lg sm:text-xl text-teal-300">

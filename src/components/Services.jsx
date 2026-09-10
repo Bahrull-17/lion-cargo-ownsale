@@ -61,11 +61,8 @@ export default function Services() {
 
   return (
     <section className="py-4 sm:py-6 bg-slate-50/50 dark:bg-slate-950/50 transition-colors duration-300 relative overflow-hidden" id="layanan">
-      {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-400/10 dark:bg-blue-600/5 blur-[120px] pointer-events-none rounded-full" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 text-xs font-semibold tracking-wide uppercase mb-2 border border-blue-200 dark:border-blue-800/50 shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
@@ -80,31 +77,24 @@ export default function Services() {
             Pilih opsi kecepatan kirim terbaik untuk bisnis dan personal Anda. Didukung jaringan maskapai nasional, handling profesional, dan asuransi menyeluruh kami pastikan muatan Anda tiba tepat waktu dan aman tanpa kompromi
           </p>
         </div>
-
-        {/* Grid Layanan (3 Kolom) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {servicesList.map((item, index) => (
             <div
               key={index}
               className="group relative bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-500/50 dark:hover:border-blue-400/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden"
             >
-              {/* Top Accent Gradient Line on Hover */}
               <div className={`absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r ${item.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
               <div>
-                {/* Icon & Badge Header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-inner group-hover:rotate-3 ${item.iconBoxBg}`}>{item.icon}</div>
                   <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border shadow-2xs ${item.badgeColor}`}>{item.badge}</span>
                 </div>
 
-                {/* Title */}
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{item.title}</h3>
 
-                {/* Description */}
                 <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
 
-                {/* Features List with Custom Icons */}
                 <ul className="mt-4 space-y-2 pt-4 border-t border-slate-100 dark:border-slate-800/80">
                   {item.features.map((feature, fIdx) => (
                     <li key={fIdx} className="flex items-center gap-2.5 text-xs text-slate-700 dark:text-slate-300">
@@ -115,14 +105,12 @@ export default function Services() {
                 </ul>
               </div>
 
-              {/* Card Bottom: Info & WhatsApp Button */}
               <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-col gap-3">
                 <div className="flex items-center justify-between text-xs font-semibold text-slate-700 dark:text-slate-300">
                   <span>{item.footerText}</span>
                   <span className="text-[11px] text-slate-400 dark:text-slate-500 font-normal">Siap Kirim</span>
                 </div>
 
-                {/* Tombol Pesan Sekarang ke WhatsApp */}
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(item.waMessage)}`}
                   target="_blank"

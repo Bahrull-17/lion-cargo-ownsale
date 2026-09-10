@@ -55,7 +55,6 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Menu Navigasi (Desktop) */}
             <nav className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => {
                 const isActive = activeMenu === item.href;
@@ -115,7 +114,6 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Tombol Kanan Mobile */}
             <div className="flex md:hidden items-center space-x-2.5">
               <button
                 onClick={toggleDarkMode}
@@ -143,7 +141,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Menu Dropdown Mobile */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-white/20 dark:border-slate-800/50 px-4 pt-3 pb-6 space-y-2 transition-colors shadow-2xl animate-fadeIn">
             {navItems.map((item) => {
@@ -202,7 +199,6 @@ export default function Navbar() {
         )}
       </header>
 
-      {/* Render Modal Cek Ongkir langsung dari Navbar */}
       <CekOngkirSection isOpen={isCekOngkirOpen} onClose={() => setIsCekOngkirOpen(false)} />
     </>
   );

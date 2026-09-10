@@ -5,7 +5,6 @@ export default function ContactSection() {
   return (
     <section id="kontak" className="-mt-12 sm:-mt-16 pt-4 sm:pt-6 pb-12 sm:pb-16 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-500/10 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-[10px] sm:text-xs font-bold tracking-wider uppercase mb-2 border border-blue-500/20 shadow-xs backdrop-blur-md">
             <Compass className="w-3 h-3 text-blue-600 dark:text-blue-400" />
@@ -19,16 +18,11 @@ export default function ContactSection() {
           </p>
         </div>
 
-        {/* Grid Konten: Info Kontak & Peta */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Kolom Informasi Kontak (5 Kolom) */}
           <div className="lg:col-span-5 space-y-4">
-            {/* Alamat */}
             <div className="space-y-3">
-              {/* Judul / Label */}
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">Kantor Pusat & Drop Point</h4>
 
-              {/* Alamat yang bisa diklik langsung ke Google Maps */}
               <a
                 href="https://www.google.com/maps/place/GEDUNG+PT+GATRANS/@-6.1252053,106.6651638,17z/data=!4m6!3m5!1s0x2e6a036700943607:0xb4debe87ebce550c!8m2!3d-6.1252053!4d106.6651638!16s%2Fg%2F11hz6qk2vn"
                 target="_blank"
@@ -78,7 +72,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Email */}
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=cargolionownsale@gmail.com&su=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
               target="_blank"
@@ -95,7 +88,6 @@ export default function ContactSection() {
               </div>
             </a>
 
-            {/* Jam Operasional */}
             <div className="bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40">
               <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
                 <Clock className="w-5 h-5" />
@@ -111,7 +103,6 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Kolom Peta Besar (7 Kolom) */}
           <div className="lg:col-span-7 h-full">
             <div className="bg-slate-50/80 dark:bg-slate-800/60 p-2 sm:p-3 rounded-3xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs h-full flex flex-col">
               <div className="relative w-full h-100 sm:h-120 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">

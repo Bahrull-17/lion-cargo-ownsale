@@ -43,22 +43,18 @@ export default function AirlinePartners() {
           </p>
         </div>
 
-        {/* Grid Maskapai (Disesuaikan jadi hingga 7 item dengan lg:grid-cols-4 atau lg:grid-cols-7) */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {airlines.map((airline, index) => (
             <div
               key={index}
               className="group flex flex-col items-center justify-center p-5 sm:p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-xl hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 text-center"
             >
-              {/* Kotak Logo Maskapai (Diperbesar ukurannya agar lebih jelas) */}
               <div className="w-28 h-16 sm:w-32 sm:h-20 mb-3.5 flex items-center justify-center p-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-100 dark:border-slate-700/50">
                 <img src={airline.logo} alt={airline.name} className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-110" />
               </div>
 
-              {/* Nama Maskapai */}
               <h3 className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{airline.name}</h3>
 
-              {/* Deskripsi Singkat */}
               <span className="mt-1 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">{airline.desc}</span>
             </div>
           ))}

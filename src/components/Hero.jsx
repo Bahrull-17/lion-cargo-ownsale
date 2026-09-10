@@ -4,20 +4,16 @@ import { ArrowRight, ShieldCheck, Clock, MapPin, PhoneCall, PlaneTakeoff, Plane,
 export default function Hero({ onOpenCekOngkir }) {
   return (
     <section id="beranda" className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-24 transition-colors duration-300">
-      {/* Background Accent Gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-72 sm:h-96 bg-blue-500/10 dark:bg-blue-600/10 blur-3xl pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Kolom Kiri: Teks & CTA */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-            {/* Badge Highlight */}
             <div className="flex items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 text-xs font-semibold tracking-wide uppercase border border-blue-200 dark:border-blue-800/50 shadow-xs w-fit mx-auto lg:mx-0">
               <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse shrink-0"></span>
               <span className="text-center">Agen Cargo Resmi Bandara Soekarno Hatta</span>
             </div>
 
-            {/* Headline Utama */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.2] sm:leading-[1.15]">
               Solusi Pengiriman Cargo Udara <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-900 dark:from-blue-400 dark:to-blue-600">Tercepat & Terpercaya</span>
             </h1>
@@ -26,8 +22,7 @@ export default function Hero({ onOpenCekOngkir }) {
               Sebagai mitra resmi <strong className="font-bold text-slate-600 dark:text-white">Lion Cargo Ownsale</strong>, kami menghadirkan solusi pengiriman barang via{" "}
               <strong className="font-bold text-slate-600 dark:text-white">Bandara Soekarno Hatta</strong> (CGK) dengan tarif kompetitif dan jaminan keamanan tertinggi untuk kebutuhan bisnis maupun pribadi Anda.
             </p>
-            {/* Fitur dengan Ikon yang Sesuai */}
-            {/* Fitur dengan Ikon yang Sesuai */}
+
             <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-1 max-w-md mx-auto lg:mx-0 justify-items-center">
               <div className="flex items-center space-x-2.5 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm w-full">
                 <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center shrink-0">
@@ -58,9 +53,7 @@ export default function Hero({ onOpenCekOngkir }) {
               </div>
             </div>
 
-            {/* Tombol Aksi (CTA) */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2">
-              {/* Tombol Pertama: Cek Tarif & Layanan (Memicu Modal Cek Ongkir) */}
               <button
                 type="button"
                 onClick={onOpenCekOngkir}
@@ -75,7 +68,6 @@ export default function Hero({ onOpenCekOngkir }) {
                 </div>
               </button>
 
-              {/* Tombol Kedua: Hubungi Admin (WhatsApp) */}
               <a
                 href="https://wa.me/6285285586828?text=Halo%20Admin,%20saya%20tertarik%20ingin%20menggunakan%20jasa%20pengiriman%20Cargo%20Udara."
                 target="_blank"
@@ -91,7 +83,7 @@ export default function Hero({ onOpenCekOngkir }) {
                 <span className="relative z-10 tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Hubungi Admin</span>
               </a>
             </div>
-            {/* Info Keunggulan Singkat */}
+
             <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80">
               <div className="group relative flex flex-col items-center lg:items-start p-3.5 sm:p-5 rounded-2xl bg-linear-to-b from-white/80 to-slate-100/50 dark:from-slate-900/60 dark:to-slate-950/40 border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-900/3 dark:shadow-black/20 hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -119,27 +111,21 @@ export default function Hero({ onOpenCekOngkir }) {
             </div>
           </div>
 
-          {/* Kolom Kanan: Ilustrasi / Kartu Visual Modern dengan Animasi Pesawat & Paket */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-              {/* Kartu Utama Dekoratif */}
               <div className="rounded-3xl bg-linear-to-br from-blue-900 via-blue-950 to-slate-900 p-6 sm:p-8 text-white shadow-2xl shadow-blue-950/30 border border-blue-800/40 relative overflow-hidden">
                 <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
 
-                {/* Ilustrasi Area Langit & Animasi Pesawat */}
                 <div className="relative w-full h-44 sm:h-52 bg-linear-to-b from-blue-800/40 via-blue-900/20 to-transparent rounded-2xl border border-blue-700/30 overflow-hidden mb-6 flex flex-col justify-between p-4">
-                  {/* Awan Berjalan */}
                   <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
                     <div className="absolute top-3 w-20 h-6 bg-white rounded-full blur-[1px] animate-[pulse_4s_ease-in-out_infinite]" style={{ left: "10%" }} />
                     <div className="absolute top-8 w-24 h-7 bg-white rounded-full blur-[1px] animate-[pulse_6s_ease-in-out_infinite]" style={{ right: "15%" }} />
                   </div>
 
-                  {/* Jalur Putus-putus Jejak Pesawat */}
                   <div className="absolute top-1/2 left-4 right-10 -translate-y-1/2 flex items-center space-x-2 opacity-40">
                     <div className="w-full border-t-2 border-dashed border-blue-300"></div>
                   </div>
 
-                  {/* Icon Pesawat Utama dengan Animasi Terbang */}
                   <div className="relative z-10 flex justify-center items-center h-28 animate-[bounce_3s_ease-in-out_infinite]">
                     <div className="relative flex items-center justify-center">
                       <div className="absolute -left-6 w-8 h-2 bg-linear-to-r from-transparent to-blue-400/60 rounded-full blur-[2px] animate-pulse" />
@@ -149,7 +135,6 @@ export default function Hero({ onOpenCekOngkir }) {
                     </div>
                   </div>
 
-                  {/* Kotak Paket Kecil di Bagian Bawah Ilustrasi */}
                   <div className="relative z-10 flex items-center justify-center space-x-2.5 pt-2">
                     <div className="px-3 py-1.5 rounded-lg bg-amber-500/90 text-white font-black text-[10px] sm:text-xs shadow-md border border-amber-400 flex items-center space-x-1 animate-pulse">
                       <Package className="w-3.5 h-3.5 text-white" />
@@ -183,7 +168,6 @@ export default function Hero({ onOpenCekOngkir }) {
                     </p>
                   </div>
 
-                  {/* Daftar Fitur Mini */}
                   <div className="space-y-2.5 sm:space-y-3 pt-2">
                     <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-200 bg-white/5 p-3 rounded-xl border border-white/10">
                       <ShieldCheck className="w-5 h-5 text-blue-400 shrink-0" />

@@ -66,37 +66,27 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Infinite Marquee Container */}
       <div className="relative w-full overflow-hidden flex">
-        {/* Gradient Overlay di Kiri & Kanan */}
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-linear-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-linear-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
-
-        {/* Track yang bergerak infinite */}
         <div className="flex gap-3 sm:gap-6 animate-marquee shrink-0 hover:[animation-play-state:paused]">
           {[...testimonials, ...testimonials].map((item, index) => (
             <div
               key={index}
               className="relative flex flex-col justify-between bg-white/90 dark:bg-slate-800/80 backdrop-blur-xs p-4 sm:p-6 rounded-2xl border border-blue-100/80 dark:border-slate-700/60 shadow-xs sm:shadow-md w-65 sm:w-87.5 shrink-0 transition-all duration-300 hover:shadow-lg"
             >
-              {/* Icon Kutipan Dekoratif di Sudut */}
               <div className="absolute top-3.5 right-3.5 text-blue-500/15 dark:text-blue-400/10 pointer-events-none">
                 <Quote className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
 
               <div>
-                {/* Rating Bintang */}
                 <div className="flex items-center gap-0.5 mb-2 sm:mb-3">
                   {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-
-                {/* Komentar */}
                 <p className="text-[11px] sm:text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed mb-3 sm:mb-4">"{item.comment}"</p>
               </div>
-
-              {/* Profil Pemberi Testimoni */}
               <div className="flex items-center gap-2.5 pt-2.5 sm:pt-3 border-t border-slate-100 dark:border-slate-700/60">
                 <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm shadow-xs ${item.bgAvatar}`}>{item.avatar}</div>
                 <div>
@@ -108,8 +98,6 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-
-      {/* CSS Keyframes untuk Animasi Berjalan Otomatis */}
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }
