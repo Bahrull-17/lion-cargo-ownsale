@@ -116,7 +116,7 @@ export default function Footer({ onOpenCekOngkir }) {
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-500 shrink-0" />
                 <a href="mailto:cargolionownsale@gmail.com" className="text-slate-400 hover:text-blue-400 transition-colors font-medium">
-                  cargolionownsale@gmail.com
+                  support@lioncargoownsale.com
                 </a>
               </li>
             </ul>
