@@ -72,19 +72,20 @@ export default function ContactSection() {
               </div>
             </div>
 
+            {/* Email Resmi - Standar Profesional menggunakan mailto */}
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=cargolionownsale@gmail.com&su=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs flex items-start gap-4 transition-all duration-300 hover:border-blue-500/40 hover:shadow-md cursor-pointer"
+              href="mailto:support@lioncargoownsale.com?subject=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
+              className="group block bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs transition-all duration-300 hover:border-blue-500/40 hover:shadow-md cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Resmi</h3>
-                <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">support@lioncargoownsale.com</p>
-                <span className="inline-block text-[10px] text-blue-600 dark:text-blue-400 font-semibold mt-1">Kirim Email Sekarang →</span>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Resmi</h3>
+                  <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">support@lioncargoownsale.com</p>
+                  <span className="inline-block text-[10px] text-blue-600 dark:text-blue-400 font-semibold mt-1">Kirim Email Sekarang →</span>
+                </div>
               </div>
             </a>
 
