@@ -42,7 +42,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="layanan" className="pt-8 pb-8 sm:pb-12 bg-linear-to-b from-blue-100/90 via-blue-50/60 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 transition-colors duration-300 overflow-hidden">
+    <section id="keunggulan" className="pt-8 pb-8 sm:pb-12 bg-linear-to-b from-blue-100/90 via-blue-50/60 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 transition-colors duration-300 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 dark:bg-blue-500/15 text-blue-700 dark:text-blue-300 text-xs font-bold tracking-wider uppercase mb-3 border border-blue-500/20 shadow-xs backdrop-blur-md">
           <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />

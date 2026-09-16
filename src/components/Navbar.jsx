@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Sun, Moon, Menu, X, MessageCircle } from "lucide-react";
 import logoImage from "../assets/images/logoownsale.png";
-import CekOngkirSection from "./CekOngkirSection"; // Pastikan path impor ini sesuai dengan struktur folder Anda
 
-export default function Navbar() {
+export default function Navbar({ onOpenCekOngkir }) {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") === "dark" || document.documentElement.classList.contains("dark");
@@ -13,9 +12,6 @@ export default function Navbar() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("#beranda");
-
-  // State untuk mengontrol buka/tutup modal Cek Ongkir
-  const [isCekOngkirOpen, setIsCekOngkirOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -66,7 +62,7 @@ export default function Navbar() {
                       key={item.href}
                       onClick={() => {
                         setActiveMenu(item.href);
-                        setIsCekOngkirOpen(true);
+                        onOpenCekOngkir?.();
                       }}
                       className={`group py-2 text-[15px] font-semibold transition-colors bg-transparent border-none cursor-pointer ${isActive ? "text-blue-900 dark:text-blue-400" : "text-slate-700 dark:text-slate-300 hover:text-blue-900 dark:hover:text-blue-400"}`}
                     >
@@ -153,7 +149,7 @@ export default function Navbar() {
                     onClick={() => {
                       setActiveMenu(item.href);
                       setIsMobileMenuOpen(false);
-                      setIsCekOngkirOpen(true);
+                      onOpenCekOngkir?.();
                     }}
                     className={`w-full text-left px-4 py-2.5 rounded-xl text-base font-medium transition-colors bg-transparent border-none cursor-pointer ${
                       isActive ? "bg-blue-50 dark:bg-slate-900 text-blue-900 dark:text-blue-400 font-semibold border-l-4 border-blue-900 dark:border-blue-500" : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
@@ -198,8 +194,6 @@ export default function Navbar() {
           </div>
         )}
       </header>
-
-      <CekOngkirSection isOpen={isCekOngkirOpen} onClose={() => setIsCekOngkirOpen(false)} />
     </>
   );
 }
