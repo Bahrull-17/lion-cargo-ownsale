@@ -74,7 +74,7 @@ export default function ContactSection() {
 
             {/* Email Resmi - Standar Profesional menggunakan mailto */}
             <a
-              href="mailto:support@lioncargoownsale.com?subject=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
+              href="mailto:admin@lioncargoownsale.com?subject=Pertanyaan%20Layanan%20Kargo%20Lion&body=Halo%20Admin%20Lion%20Cargo,%20saya%20ingin%20bertanya%20mengenai..."
               className="group block bg-slate-50/80 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-xs transition-all duration-300 hover:border-blue-500/40 hover:shadow-md cursor-pointer"
             >
               <div className="flex items-start gap-4">
@@ -83,7 +83,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Email Resmi</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">support@lioncargoownsale.com</p>
+                  <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">admin@lioncargoownsale.com</p>
                   <span className="inline-block text-[10px] text-blue-600 dark:text-blue-400 font-semibold mt-1">Kirim Email Sekarang →</span>
                 </div>
               </div>
