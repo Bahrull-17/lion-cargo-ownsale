@@ -74,7 +74,7 @@ export default function Services() {
           </h2>
 
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Pilih opsi kecepatan kirim terbaik untuk bisnis dan personal Anda. Didukung jaringan maskapai nasional, handling profesional, dan asuransi menyeluruh kami pastikan muatan Anda tiba tepat waktu dan aman tanpa kompromi
+            Lion Cargo Ownsale menyediakan layanan cargo udara dari Bandara Soekarno Hatta meliputi cargo reguler, cargo express, dan pengiriman prioritas ke berbagai kota di Indonesia.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
