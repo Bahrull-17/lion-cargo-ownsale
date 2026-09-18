@@ -31,7 +31,9 @@ export default function Footer({ onOpenCekOngkir }) {
                 <span className="text-[10px] tracking-widest text-slate-400 uppercase font-medium">Air Freight Service</span>
               </div>
             </a>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">Mitra agen pengiriman kargo udara resmi, terpercaya, dan profesional berpusat di Bandara Internasional Soekarno-Hatta melayani rute domestik seluruh Indonesia.</p>
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Mitra layanan pengiriman kargo udara resmi, terpercaya, dan profesional berpusat di Bandara Internasional Soekarno-Hatta melayani rute domestik seluruh Indonesia.
+            </p>
             <div className="pt-2 flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-semibold border border-blue-500/25">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

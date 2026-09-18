@@ -15,12 +15,13 @@ export default function Hero({ onOpenCekOngkir }) {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.2] sm:leading-[1.15]">
-              Solusi Pengiriman Cargo Udara <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-900 dark:from-blue-400 dark:to-blue-600">Tercepat & Terpercaya</span>
+              Solusi Pengiriman Cargo Udara <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-900 dark:from-blue-400 dark:to-blue-600">Bandara Soekarno Hatta</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
               Sebagai mitra resmi <strong className="font-bold text-slate-600 dark:text-white">Lion Cargo Ownsale</strong>, kami menghadirkan solusi pengiriman barang via{" "}
-              <strong className="font-bold text-slate-600 dark:text-white">Bandara Soekarno Hatta</strong> (CGK) dengan tarif kompetitif dan jaminan keamanan tertinggi untuk kebutuhan bisnis maupun pribadi Anda.
+              <strong className="font-bold text-slate-600 dark:text-white">Bandara Soekarno Hatta</strong> (CGK) ke seluruh Indonesia. Nikmati layanan cek ongkir cepat, pengiriman aman, dan solusi logistik untuk kebutuhan bisnis maupun
+              pribadi Anda.
             </p>
 
             <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-1 max-w-md mx-auto lg:mx-0 justify-items-center">
@@ -62,7 +63,7 @@ export default function Hero({ onOpenCekOngkir }) {
                 <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
                 <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <span className="relative z-10 tracking-wide drop-shadow-xs">Cek Tarif & Layanan</span>
+                <span className="relative z-10 tracking-wide drop-shadow-xs">Cek Ongkir Cargo</span>
                 <div className="relative z-10 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/15 flex items-center justify-center group-hover:translate-x-1.5 transition-transform duration-300 shrink-0">
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                 </div>
@@ -88,9 +89,9 @@ export default function Hero({ onOpenCekOngkir }) {
               <div className="group relative flex flex-col items-center lg:items-start p-3.5 sm:p-5 rounded-2xl bg-linear-to-b from-white/80 to-slate-100/50 dark:from-slate-900/60 dark:to-slate-950/40 border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-900/3 dark:shadow-black/20 hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black bg-clip-text text-transparent bg-linear-to-r from-blue-700 via-blue-800 to-indigo-900 dark:from-blue-400 dark:via-blue-300 dark:to-indigo-300 tracking-tighter drop-shadow-xs">
-                  500+
+                  50+
                 </span>
-                <span className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest mt-1 text-center lg:text-left">Kota Tujuan</span>
+                <span className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest mt-1 text-center lg:text-left">Jangkauan Kota</span>
               </div>
 
               <div className="group relative flex flex-col items-center lg:items-start p-3.5 sm:p-5 rounded-2xl bg-linear-to-b from-white/80 to-slate-100/50 dark:from-slate-900/60 dark:to-slate-950/40 border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-900/3 dark:shadow-black/20 hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
@@ -106,7 +107,7 @@ export default function Hero({ onOpenCekOngkir }) {
                 <span className="text-2xl sm:text-3xl lg:text-4xl font-black bg-clip-text text-transparent bg-linear-to-r from-blue-700 via-blue-800 to-indigo-900 dark:from-blue-400 dark:via-blue-300 dark:to-indigo-300 tracking-tighter drop-shadow-xs">
                   24/7
                 </span>
-                <span className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest mt-1 text-center lg:text-left">Dukungan CS</span>
+                <span className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 font-bold uppercase tracking-widest mt-1 text-center lg:text-left">Siap Membantu</span>
               </div>
             </div>
           </div>

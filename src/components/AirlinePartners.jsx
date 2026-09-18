@@ -32,14 +32,14 @@ export default function AirlinePartners() {
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 text-xs font-semibold tracking-wide uppercase mb-3 border border-blue-200 dark:border-blue-800/50">
             <Plane className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-            <span>Kemitraan Maskapai Resmi</span>
+            <span>Jaringan Maskapai Cargo</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-            Didukung <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-blue-800">Maskapai Nasional</span> Terbaik & Terpercaya
+            Jaringan <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-indigo-600 to-blue-800">Maskapai Cargo Udara</span> Bandara Soekarno Hatta
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Beroperasi secara terintegrasi dengan maskapai penerbangan kargo nasional pilihan guna memastikan alokasi ruang muat prioritas, keamanan kargo maksimal, dan ketepatan jadwal pengiriman.
+            Lion Cargo Ownsale menyediakan layanan pengiriman cargo udara melalui jaringan maskapai penerbangan dari Bandara Soekarno Hatta (CGK) menuju berbagai wilayah Indonesia.
           </p>
         </div>
 
