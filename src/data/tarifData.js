@@ -1,5 +1,3 @@
-// tarifData.js
-
 export const databaseTarif = [
   // --- Cargo ---
   { id: "AAP_Lion", dest: "AAP", namaDest: "SAMARINDA (AAP)", maskapai: "Lion Air", rateReguler: 50579 },
