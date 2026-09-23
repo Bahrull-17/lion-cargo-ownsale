@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, ShieldCheck, Clock, MapPin, PhoneCall, PlaneTakeoff, Plane, Package, Building2, ShieldCheck as ShieldIcon, Zap, Tag } from "lucide-react";
 
-export default function Hero({ onOpenCekOngkir }) {
+import { ROUTES } from "../config/routes";
+import { whatsappLink } from "../config/site";
+
+export default function Hero() {
+  const navigate = useNavigate();
+  const whatsappUrl = whatsappLink("Halo Admin, saya tertarik ingin menggunakan jasa pengiriman Cargo Udara.");
   return (
     <section id="beranda" className="relative overflow-hidden bg-slate-50 dark:bg-slate-950 pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-24 transition-colors duration-300">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-72 sm:h-96 bg-blue-500/10 dark:bg-blue-600/10 blur-3xl pointer-events-none rounded-full" />
@@ -57,7 +63,7 @@ export default function Hero({ onOpenCekOngkir }) {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2">
               <button
                 type="button"
-                onClick={onOpenCekOngkir}
+                onClick={() => navigate(ROUTES.cekOngkir)}
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white bg-linear-to-r from-blue-700 via-blue-800 to-indigo-900 rounded-xl sm:rounded-2xl shadow-xl shadow-blue-900/30 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden border border-blue-500/30 dark:border-blue-400/30 cursor-pointer"
               >
                 <div className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-in-out" />
@@ -70,7 +76,7 @@ export default function Hero({ onOpenCekOngkir }) {
               </button>
 
               <a
-                href="https://wa.me/6285285586828?text=Halo%20Admin,%20saya%20tertarik%20ingin%20menggunakan%20jasa%20pengiriman%20Cargo%20Udara."
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-xl sm:rounded-2xl shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"

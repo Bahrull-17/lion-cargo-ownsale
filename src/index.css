@@ -1,17 +1,29 @@
 @import "tailwindcss";
 
-/* Mengaktifkan dukungan kelas .dark secara manual untuk Tailwind v4 */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Transisi halus untuk mode terang & gelap */
 html {
   scroll-behavior: smooth;
 }
-
+html {
+  scroll-padding-top: 5.5rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 body {
   background-color: #ffffff;
   color: #0f172a;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+html.dark {
+  color-scheme: dark;
+}
+html.dark body {
+  background-color: #020617; /* slate-950 */
+  color: #f1f5f9; /* slate-100 */
 }

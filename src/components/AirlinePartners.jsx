@@ -1,7 +1,6 @@
 import React from "react";
-import { Plane, ShieldCheck, Clock, Award } from "lucide-react";
+import { Plane } from "lucide-react";
 
-// Import gambar dari folder src/assets/images/ (Lengkap 7 Maskapai)
 import airasiaImg from "../assets/images/airasia.png";
 import batikImg from "../assets/images/batik.png";
 import citilinkImg from "../assets/images/citilink.png";

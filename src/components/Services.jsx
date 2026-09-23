@@ -1,10 +1,8 @@
-import React from "react";
-import { Package, Plane, Zap, ArrowRight, ShieldCheck, Clock, Calendar, Globe, Building2, Flame, MessageCircle } from "lucide-react";
+import { Package, Plane, Zap, ShieldCheck, Clock, Calendar, Globe, Building2, Flame, MessageCircle } from "lucide-react";
+import { whatsappLink } from "../config/site";
+import { SECTION_IDS } from "../config/routes";
 
 export default function Services() {
-  // Nomor WhatsApp tujuan
-  const whatsappNumber = "6285285586828";
-
   const servicesList = [
     {
       badge: "Reguler",
@@ -60,7 +58,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-4 sm:py-6 bg-slate-50/50 dark:bg-slate-950/50 transition-colors duration-300 relative overflow-hidden" id="layanan">
+    <section className="py-4 sm:py-6 bg-slate-50/50 dark:bg-slate-950/50 transition-colors duration-300 relative overflow-hidden" id={SECTION_IDS.services}>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-400/10 dark:bg-blue-600/5 blur-[120px] pointer-events-none rounded-full" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
@@ -112,7 +110,7 @@ export default function Services() {
                 </div>
 
                 <a
-                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(item.waMessage)}`}
+                  href={whatsappLink(item.waMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all duration-300 active:scale-95"

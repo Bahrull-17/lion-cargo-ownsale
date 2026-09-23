@@ -121,7 +121,6 @@ export default function CargoFlightBanner() {
           <div className="telemetry-c absolute left-[72%] top-[10%] font-mono text-[10px] text-slate-400 bg-[#0A1330]/80 border border-slate-700/60 rounded px-1.5 py-0.5">KETINGGIAN 35.000 FT</div>
         </div>
 
-        {/* ============= MOBILE ============= */}
         <div className="block sm:hidden relative w-full h-28">
           <div className="instrument-grid absolute inset-0" />
 

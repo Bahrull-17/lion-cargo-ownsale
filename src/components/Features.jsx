@@ -60,7 +60,6 @@ export default function Features() {
               </p>
             </div>
 
-            {/* Grid 6 Kotak Keunggulan */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {items.map((item, index) => (
                 <div
