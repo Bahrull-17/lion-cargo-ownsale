@@ -65,7 +65,7 @@ export default function CekOngkirPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-6 pb-16 px-4 sm:px-6 transition-colors">
+    <main className="bg-slate-50 dark:bg-slate-950 pt-6 pb-16 px-4 sm:px-6 transition-colors">
       <div className="max-w-xl lg:max-w-2xl mx-auto space-y-6">
         {/* Teks h2 dan Penjelasan DI LUAR KOTAK */}
         <div className="text-center space-y-2">
