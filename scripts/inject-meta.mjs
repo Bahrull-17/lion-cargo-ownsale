@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, copyFile } from "node:fs/promises";
+import { readFile, writeFile, copyFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -43,10 +43,9 @@ async function main() {
     const meta = PAGE_META_BY_PATH[routePath];
     if (!meta) throw new Error(`Tidak ada metadata untuk rute "${routePath}" di src/config/pageMeta.js`);
 
-    const outDir = path.join(DIST_DIR, routePath.replace(/^\//, ""));
-    await mkdir(outDir, { recursive: true });
-    await writeFile(path.join(outDir, "index.html"), injectMeta(baseHtml, meta), "utf-8");
-    console.log(`✓ ${routePath} -> dist${routePath}/index.html (title, canonical, OG sendiri)`);
+    const fileName = `${routePath.replace(/^\//, "")}.html`;
+    await writeFile(path.join(DIST_DIR, fileName), injectMeta(baseHtml, meta), "utf-8");
+    console.log(`✓ ${routePath} -> dist/${fileName} (title, canonical, OG sendiri)`);
   }
 
   const notFoundHtml = injectMeta(baseHtml, {
