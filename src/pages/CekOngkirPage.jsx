@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Plane, MapPin, Scale, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
-import { databaseTarif } from "../data/tarifData";
 import { whatsappLink } from "../config/site";
 import useDocumentMeta from "../hooks/useDocumentMeta";
+import useTarifData from "../hooks/useTarifData";
 import { CEK_ONGKIR_META } from "../config/pageMeta";
 
 export default function CekOngkirPage() {
   useDocumentMeta(CEK_ONGKIR_META);
 
+  const { databaseTarif, pengaturan, loading: loadingTarif, isFallback } = useTarifData();
+
   const [origin] = useState("Bandara Soekarno Hatta - Jakarta (CGK)");
   const [destinationCode, setDestinationCode] = useState("");
   const [weight, setWeight] = useState(10); // Minimal langsung 10 KG
+
+  // Kalau berat minimum dari sheet Pengaturan berbeda dari default 10,
+  // sesuaikan nilai awal input berat begitu data selesai dimuat.
+  useEffect(() => {
+    if (!loadingTarif) setWeight(pengaturan.beratMinimum);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loadingTarif]);
 
   const [resultList, setResultList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -38,12 +47,11 @@ export default function CekOngkirPage() {
     setLoading(true);
 
     setTimeout(() => {
-      const finalWeight = Math.max(Number(weight) || 10, 10);
-      const biayaAdmin = 30000;
+      const finalWeight = Math.max(Number(weight) || pengaturan.beratMinimum, pengaturan.beratMinimum);
+      const biayaAdmin = pengaturan.biayaAdmin;
 
       const filteredData = databaseTarif.filter((item) => item.dest === destinationCode);
 
-      // Hitung subtotal berat dan tambahkan biaya admin ke total keseluruhan
       const calculatedResults = filteredData.map((item) => {
         const subtotalBerat = item.rateReguler * finalWeight;
         const totalCost = subtotalBerat + biayaAdmin;
@@ -53,7 +61,7 @@ export default function CekOngkirPage() {
           subtotalBerat,
           biayaAdmin,
           totalCost,
-          estimatedTime: "2-3 Hari",
+          estimatedTime: pengaturan.estimasiWaktu,
         };
       });
 
@@ -67,7 +75,6 @@ export default function CekOngkirPage() {
   return (
     <main className="bg-slate-50 dark:bg-slate-950 pt-6 pb-16 px-4 sm:px-6 transition-colors">
       <div className="max-w-xl lg:max-w-2xl mx-auto space-y-6">
-        {/* Teks h2 dan Penjelasan DI LUAR KOTAK */}
         <div className="text-center space-y-2">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 mb-1">
             <Plane className="w-6 h-6" />
@@ -127,30 +134,34 @@ export default function CekOngkirPage() {
                 <input
                   id="berat"
                   type="number"
-                  min="10"
+                  min={pengaturan.beratMinimum}
                   value={weight}
-                  disabled={loading}
+                  disabled={loading || loadingTarif}
                   onChange={(e) => {
                     setWeight(e.target.value);
                     clearResults();
                   }}
-                  placeholder="Minimal 10 KG"
+                  placeholder={`Minimal ${pengaturan.beratMinimum} KG`}
                   className="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none"
                   required
                 />
               </div>
               <div className="flex items-start sm:items-center space-x-1 text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400 pl-1 font-medium">
                 <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5 sm:mt-0" />
-                <span>Minimum kargo udara adalah 10 KG. Sudah termasuk biaya penanganan Rp 30.000.</span>
+                <span>
+                  Minimum kargo udara adalah {pengaturan.beratMinimum} KG. Sudah termasuk biaya penanganan Rp {pengaturan.biayaAdmin.toLocaleString("id-ID")}.
+                </span>
               </div>
             </div>
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || loadingTarif}
               className="w-full mt-2 py-3.5 px-5 bg-linear-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white font-bold text-xs sm:text-sm rounded-xl shadow-lg shadow-blue-600/30 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer active:scale-[0.99]"
             >
-              {loading ? (
+              {loadingTarif ? (
+                <span>Memuat Tarif Terbaru...</span>
+              ) : loading ? (
                 <span>Menghitung Tarif...</span>
               ) : (
                 <>
@@ -159,6 +170,8 @@ export default function CekOngkirPage() {
                 </>
               )}
             </button>
+
+            {isFallback && !loadingTarif && <p className="text-[10px] sm:text-[11px] text-slate-400 dark:text-slate-500 text-center pt-1">Tarif terbaru belum bisa dimuat, menampilkan tarif cadangan.</p>}
           </form>
 
           {resultList.length > 0 && (
