@@ -1,14 +1,19 @@
 import { readFile, writeFile, copyFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { ROUTES } from "../src/config/routes.js";
 import { PAGE_META_BY_PATH } from "../src/config/pageMeta.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.join(__dirname, "..", "dist");
+const SSR_ENTRY = path.join(__dirname, "..", "dist-server", "entry-server.js");
 
-const ROUTES_TO_PRERENDER = [ROUTES.cekOngkir];
+// Semua rute yang dibuatkan file HTML sendiri berisi konten asli (bukan <div id="root"></div> kosong).
+// Rute baru cukup ditambahkan di sini dan di src/config/routes.js + pageMeta.js.
+const ROUTES_TO_PRERENDER = [ROUTES.home, ROUTES.cekOngkir];
+
+const ROOT_PLACEHOLDER = '<div id="root"></div>';
 
 function escapeHtml(str) {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -34,8 +39,29 @@ function injectMeta(html, meta) {
   return out;
 }
 
+// Menyisipkan hasil render React ke dalam <div id="root">.
+// Memakai fungsi (bukan string) supaya karakter "$" di dalam konten tidak ditafsirkan sebagai pola replace.
+function injectAppHtml(html, appHtml) {
+  if (!html.includes(ROOT_PLACEHOLDER)) {
+    throw new Error(`${ROOT_PLACEHOLDER} tidak ditemukan di dist/index.html. Jalankan "vite build" ulang (file ini tidak bisa dijalankan dua kali berturut-turut).`);
+  }
+  return html.replace(ROOT_PLACEHOLDER, () => `<div id="root">${appHtml}</div>`);
+}
+
+// "/" -> index.html, "/cek-ongkir" -> cek-ongkir.html
+function fileNameForRoute(routePath) {
+  const name = routePath.replace(/^\//, "");
+  return name === "" ? "index.html" : `${name}.html`;
+}
+
 async function main() {
   if (!existsSync(DIST_DIR)) throw new Error(`dist/ tidak ditemukan. Jalankan "vite build" dulu.`);
+  if (!existsSync(SSR_ENTRY)) {
+    throw new Error(`dist-server/entry-server.js tidak ditemukan. Jalankan dulu: vite build --ssr src/entry-server.jsx --outDir dist-server`);
+  }
+
+  // pathToFileURL wajib di Windows: import() tidak menerima path seperti D:\...
+  const { render } = await import(pathToFileURL(SSR_ENTRY).href);
 
   const baseHtml = await readFile(path.join(DIST_DIR, "index.html"), "utf-8");
 
@@ -43,11 +69,16 @@ async function main() {
     const meta = PAGE_META_BY_PATH[routePath];
     if (!meta) throw new Error(`Tidak ada metadata untuk rute "${routePath}" di src/config/pageMeta.js`);
 
-    const fileName = `${routePath.replace(/^\//, "")}.html`;
-    await writeFile(path.join(DIST_DIR, fileName), injectMeta(baseHtml, meta), "utf-8");
-    console.log(`✓ ${routePath} -> dist/${fileName} (title, canonical, OG sendiri)`);
+    const appHtml = render(routePath);
+    if (!appHtml.includes("<h1")) throw new Error(`Hasil render untuk "${routePath}" tidak berisi <h1>. Prerender gagal.`);
+
+    const fileName = fileNameForRoute(routePath);
+    const finalHtml = injectAppHtml(injectMeta(baseHtml, meta), appHtml);
+    await writeFile(path.join(DIST_DIR, fileName), finalHtml, "utf-8");
+    console.log(`✓ ${routePath} -> dist/${fileName} (meta sendiri + ${Math.round(appHtml.length / 1024)} KB konten prerender)`);
   }
 
+  // 404.html sengaja TIDAK diprerender: konten halaman 404 dirender di browser.
   const notFoundHtml = injectMeta(baseHtml, {
     title: "Halaman Tidak Ditemukan | Lion Cargo Ownsale",
     description: "Halaman yang Anda cari tidak ditemukan.",
