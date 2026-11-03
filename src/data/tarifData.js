@@ -35,7 +35,7 @@ export const databaseTarif = [
   { id: "HLP_Lion", dest: "HLP", namaDest: "JAKARTA TIMUR (HLP)", maskapai: "Lion Air", rateReguler: 22840 },
   { id: "HMS_Lion", dest: "HMS", namaDest: "MUARA TEWEH (HMS)", maskapai: "Lion Air", rateReguler: 45642 },
   { id: "JBB_Lion", dest: "JBB", namaDest: "JEMBER (JBB)", maskapai: "Lion Air", rateReguler: 46956 },
-  { id: "JOG_Lion", dest: "JOG", namaDest: "YOGYAKARTA (JOG)", maskapai: "Lion Air", rateReguler: 24534 },
+  { id: "YIA_Lion", dest: "YIA", namaDest: "YOGYAKARTA (YIA)", maskapai: "Lion Air", rateReguler: 24534 },
   { id: "KAZ_Lion", dest: "KAZ", namaDest: "KAZ-HALMAHERA UTARA (KAZ)", maskapai: "Lion Air", rateReguler: 96546 },
   { id: "KBU_Lion", dest: "KBU", namaDest: "KOTABARU (KBU)", maskapai: "Lion Air", rateReguler: 48994 },
   { id: "KDI_Lion", dest: "KDI", namaDest: "KENDARI (KDI)", maskapai: "Lion Air", rateReguler: 66482 },
@@ -117,3 +117,11 @@ export const databaseTarif = [
 
 // Helper untuk mengambil daftar maskapai yang unik secara otomatis
 export const daftarMaskapai = [...new Set(databaseTarif.map((item) => item.maskapai))];
+
+// Data bawaan (cadangan). Sumber utama tarif adalah Google Sheets: halaman diprerender dari Sheet saat build
+// (scripts/fetch-tarif.mjs) dan diperbarui lagi di browser. Isi file ini hanya dipakai kalau Sheet tidak bisa diambil.
+export const pengaturanBawaan = {
+  biayaAdmin: 30000,
+  beratMinimum: 10,
+  estimasiWaktu: "1-2 Hari",
+};

@@ -3,7 +3,9 @@ import { Plane, MapPin, Scale, ArrowRight, CheckCircle2, AlertCircle } from "luc
 import { whatsappLink } from "../config/site";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import useTarifData from "../hooks/useTarifData";
+import RuteTujuanList from "../components/RuteTujuanList";
 import { CEK_ONGKIR_META } from "../config/pageMeta";
+import { beratDihitung, hitungBiaya, tarifUntukTujuan } from "../utils/tarif";
 
 export default function CekOngkirPage() {
   useDocumentMeta(CEK_ONGKIR_META);
@@ -47,20 +49,16 @@ export default function CekOngkirPage() {
     setLoading(true);
 
     setTimeout(() => {
-      const finalWeight = Math.max(Number(weight) || pengaturan.beratMinimum, pengaturan.beratMinimum);
-      const biayaAdmin = pengaturan.biayaAdmin;
+      const finalWeight = beratDihitung(weight, pengaturan);
 
-      const filteredData = databaseTarif.filter((item) => item.dest === destinationCode);
-
-      const calculatedResults = filteredData.map((item) => {
-        const subtotalBerat = item.rateReguler * finalWeight;
-        const totalCost = subtotalBerat + biayaAdmin;
+      const calculatedResults = tarifUntukTujuan(databaseTarif, destinationCode).map((item) => {
+        const { subtotal, biayaAdmin, total } = hitungBiaya(item.rateReguler, finalWeight, pengaturan);
 
         return {
           ...item,
-          subtotalBerat,
+          subtotalBerat: subtotal,
           biayaAdmin,
-          totalCost,
+          totalCost: total,
           estimatedTime: pengaturan.estimasiWaktu,
         };
       });
@@ -231,6 +229,8 @@ export default function CekOngkirPage() {
             <div className="mt-4 p-4 text-center text-xs text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/40 rounded-xl">Tidak ada data tarif yang tersedia untuk tujuan tersebut.</div>
           )}
         </div>
+
+        <RuteTujuanList databaseTarif={databaseTarif} />
       </div>
     </main>
   );

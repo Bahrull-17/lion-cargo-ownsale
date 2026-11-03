@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { HOME_SECTIONS } from "../config/navigation";
 import { ROUTES } from "../config/routes";
+import { isDestinationPath } from "../config/destinations";
 
 const ACTIVE_LINE = 120;
 
@@ -37,6 +38,6 @@ export default function useActiveMenu() {
   }, [pathname]);
 
   if (pathname === ROUTES.home) return homeMenu;
-  if (pathname === ROUTES.cekOngkir) return ROUTES.cekOngkir;
+  if (pathname === ROUTES.cekOngkir || isDestinationPath(pathname)) return ROUTES.cekOngkir;
   return null;
 }

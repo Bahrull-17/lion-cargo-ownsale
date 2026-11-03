@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import Papa from "papaparse";
-import { databaseTarif as tarifBawaan } from "../data/tarifData";
+import { databaseTarif as tarifBawaan, pengaturanBawaan } from "../data/tarifData";
+import { validasiBarisTarif, validasiPengaturan } from "../utils/tarifSheet";
 import { TARIF_CSV_URL, PENGATURAN_CSV_URL } from "../config/tarifSource";
-
-// Nilai pengaturan bawaan, dipakai kalau sheet Pengaturan gagal diambil,
-// kosong, atau isinya tidak valid.
-const PENGATURAN_BAWAAN = {
-  biayaAdmin: 30000,
-  beratMinimum: 10,
-  estimasiWaktu: "2-3 Hari",
-};
 
 function parseCsv(url) {
   return new Promise((resolve, reject) => {
@@ -23,56 +16,24 @@ function parseCsv(url) {
   });
 }
 
-// Satu baris tarif dianggap valid kalau kode tujuan diisi dan tarifnya
-// berupa angka positif. Baris yang tidak valid (misalnya baris kosong
-// atau salah ketik) dibuang, bukan membuat seluruh data gagal dimuat.
-function validasiBarisTarif(rows) {
-  const hasil = [];
-  for (const row of rows) {
-    const dest = (row.dest || "").trim().toUpperCase();
-    const namaDest = (row.namaDest || "").trim();
-    const maskapai = (row.maskapai || "").trim();
-    const rateReguler = Number(String(row.rateReguler || "").replace(/[^0-9.-]/g, ""));
-
-    if (!dest || !namaDest || !Number.isFinite(rateReguler) || rateReguler <= 0) continue;
-
-    hasil.push({ dest, namaDest, maskapai, rateReguler });
-  }
-  return hasil;
-}
-
-function validasiPengaturan(rows) {
-  const map = {};
-  for (const row of rows) {
-    const key = (row.key || "").trim();
-    const value = (row.value || "").trim();
-    if (key) map[key] = value;
-  }
-
-  const biayaAdmin = Number(String(map.biayaAdmin || "").replace(/[^0-9.-]/g, ""));
-  const beratMinimum = Number(String(map.beratMinimum || "").replace(/[^0-9.-]/g, ""));
-  const estimasiWaktu = map.estimasiWaktu;
-
-  return {
-    biayaAdmin: Number.isFinite(biayaAdmin) && biayaAdmin >= 0 ? biayaAdmin : PENGATURAN_BAWAAN.biayaAdmin,
-    beratMinimum: Number.isFinite(beratMinimum) && beratMinimum > 0 ? beratMinimum : PENGATURAN_BAWAAN.beratMinimum,
-    estimasiWaktu: estimasiWaktu || PENGATURAN_BAWAAN.estimasiWaktu,
-  };
+// Saat build, scripts/inject-meta.mjs mengambil Sheet lalu menaruh hasilnya di window.__TARIF_DATA__ pada HTML
+// (dan di globalThis saat prerender). Memakainya sebagai data awal membuat HTML hasil prerender, hasil hidrasi,
+// dan tampilan pertama pengunjung sama-sama memuat tarif Sheet, tanpa menunggu unduhan.
+function stateAwal() {
+  const dariBuild = globalThis.__TARIF_DATA__;
+  if (dariBuild) return { databaseTarif: dariBuild.databaseTarif, pengaturan: dariBuild.pengaturan, loading: false, isFallback: false };
+  return { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: true, isFallback: false };
 }
 
 /**
- * Mengambil data tarif & pengaturan dari Google Sheets.
- * Kalau gagal (jaringan bermasalah, link belum di-publish, sheet kosong,
- * atau hasilnya tidak masuk akal), otomatis memakai data bawaan di
- * src/data/tarifData.js supaya halaman tetap bisa dipakai.
+ * Menyediakan data tarif & pengaturan. Data awal berasal dari Sheet saat build (kalau ada), lalu selalu
+ * diperbarui dari Google Sheets di browser supaya perubahan tarif terbaru langsung terlihat.
+ * Kalau pengambilan gagal (jaringan bermasalah, link belum di-publish, sheet kosong, atau hasilnya tidak
+ * masuk akal), data yang sudah ada tetap dipakai; kalau belum ada sama sekali, dipakai data bawaan
+ * di src/data/tarifData.js supaya halaman tetap bisa dipakai.
  */
 export default function useTarifData() {
-  const [state, setState] = useState({
-    databaseTarif: tarifBawaan,
-    pengaturan: PENGATURAN_BAWAAN,
-    loading: true,
-    isFallback: false,
-  });
+  const [state, setState] = useState(stateAwal);
 
   useEffect(() => {
     let batal = false;
@@ -87,15 +48,15 @@ export default function useTarifData() {
         if (batal) return;
 
         if (tarifValid.length === 0) {
-          setState({ databaseTarif: tarifBawaan, pengaturan: pengaturanValid, loading: false, isFallback: true });
+          setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanValid, loading: false, isFallback: true } : sebelumnya));
           return;
         }
 
         setState({ databaseTarif: tarifValid, pengaturan: pengaturanValid, loading: false, isFallback: false });
       } catch (err) {
         if (batal) return;
-        console.error("Gagal memuat data tarif dari Google Sheets, memakai data bawaan:", err);
-        setState({ databaseTarif: tarifBawaan, pengaturan: PENGATURAN_BAWAAN, loading: false, isFallback: true });
+        console.error("Gagal memuat data tarif dari Google Sheets:", err);
+        setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: false, isFallback: true } : sebelumnya));
       }
     }
 

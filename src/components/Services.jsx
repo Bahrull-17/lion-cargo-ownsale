@@ -10,9 +10,9 @@ export default function Services() {
       icon: <Package className="w-7 h-7" />,
       iconBoxBg: "bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white",
       title: "Cargo Reguler",
-      desc: "Layanan pengiriman cargo dengan estimasi 1-3 hari kerja. Solusi ekonomis untuk pengiriman Anda dengan kualitas terjamin.",
+      desc: "Layanan pengiriman cargo dengan estimasi 1-2 hari kerja. Solusi ekonomis untuk pengiriman Anda dengan kualitas terjamin.",
       features: [
-        { text: "Estimasi 1-3 hari kerja", icon: <Clock className="w-4 h-4 text-blue-500 shrink-0" /> },
+        { text: "Estimasi 1-2 hari kerja", icon: <Clock className="w-4 h-4 text-blue-500 shrink-0" /> },
         { text: "Via penerbangan reguler", icon: <Plane className="w-4 h-4 text-blue-500 shrink-0" /> },
         { text: "Jangkauan seluruh Indonesia", icon: <Globe className="w-4 h-4 text-blue-500 shrink-0" /> },
         { text: "Asuransi pengiriman", icon: <ShieldCheck className="w-4 h-4 text-blue-500 shrink-0" /> },
