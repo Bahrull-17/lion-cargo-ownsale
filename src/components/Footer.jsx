@@ -3,6 +3,7 @@ import { Plane, MapPin, Phone, Mail, ArrowUp, Heart } from "lucide-react";
 import { SITE, whatsappLink } from "../config/site";
 import { ROUTES } from "../config/routes";
 import { FOOTER_LINKS } from "../config/navigation";
+import { POPULAR_DESTINATIONS } from "../config/destinations";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -96,6 +97,19 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        <div className="py-8 border-b border-slate-800/80 space-y-3">
+          <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Tarif Cargo Udara Rute Populer</h3>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            {POPULAR_DESTINATIONS.map((destination) => (
+              <li key={destination.code}>
+                <Link to={destination.path} className="hover:text-blue-400 transition-colors">
+                  {`Jakarta ke ${destination.kota}`}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="pt-8 flex flex-col items-center justify-center text-center gap-2 text-xs text-slate-400">

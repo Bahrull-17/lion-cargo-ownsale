@@ -18,8 +18,10 @@ import Contact from "./components/Contact";
 
 // Halaman terpisah
 import CekOngkirPage from "./pages/CekOngkirPage";
+import RuteCargoPage from "./pages/RuteCargoPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ROUTES } from "./config/routes";
+import { DESTINATION_PAGES } from "./config/destinations";
 
 /**
  * Mengatur posisi scroll setiap kali lokasi berubah:
@@ -79,6 +81,9 @@ export default function App() {
       <Routes>
         <Route path={ROUTES.home} element={<HomePage />} />
         <Route path={ROUTES.cekOngkir} element={<CekOngkirPage />} />
+        {DESTINATION_PAGES.map((destination) => (
+          <Route key={destination.code} path={destination.path} element={<RuteCargoPage destination={destination} />} />
+        ))}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
