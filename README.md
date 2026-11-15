@@ -78,6 +78,20 @@ In the browser, the page starts with the tariff data embedded at build time, the
     └── utils       # Tariff parsing and validation
 ```
 
+## 📸 Screenshots
+
+### Homepage
+
+![Lion Cargo Ownsale Homepage](docs/screenshots/homepage.png)
+
+### Services
+
+![Lion Cargo Ownsale Services](docs/screenshots/services.png)
+
+### Contact
+
+![Lion Cargo Ownsale Contact](docs/screenshots/contact.png)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
