@@ -55,8 +55,8 @@ export default function RuteCargoPage({ destination }) {
           <ChevronRight className="w-3 h-3 shrink-0" aria-hidden="true" />
         </li>
         <li className="flex items-center gap-1">
-          <Link to={ROUTES.cekOngkir} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            Cek Ongkir
+          <Link to={ROUTES.tarif} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            Tarif Cargo Udara
           </Link>
           <ChevronRight className="w-3 h-3 shrink-0" aria-hidden="true" />
         </li>
@@ -99,7 +99,7 @@ export default function RuteCargoPage({ destination }) {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Beranda", item: `${SITE.url}/` },
-          { "@type": "ListItem", position: 2, name: "Cek Ongkir", item: `${SITE.url}${ROUTES.cekOngkir}` },
+          { "@type": "ListItem", position: 2, name: "Tarif Cargo Udara", item: `${SITE.url}${ROUTES.tarif}` },
           { "@type": "ListItem", position: 3, name: `Jakarta ke ${kota}`, item: url },
         ],
       },
@@ -247,6 +247,10 @@ export default function RuteCargoPage({ destination }) {
               );
             })}
           </ul>
+          <Link to={ROUTES.tarif} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-700 dark:text-blue-400 hover:underline">
+            Lihat semua tarif cargo udara
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+          </Link>
         </section>
       </div>
     </main>

@@ -38,6 +38,7 @@ export default function useActiveMenu() {
   }, [pathname]);
 
   if (pathname === ROUTES.home) return homeMenu;
-  if (pathname === ROUTES.cekOngkir || isDestinationPath(pathname)) return ROUTES.cekOngkir;
+  if (pathname === ROUTES.cekOngkir) return ROUTES.cekOngkir;
+  if (pathname === ROUTES.tarif || isDestinationPath(pathname)) return ROUTES.tarif;
   return null;
 }

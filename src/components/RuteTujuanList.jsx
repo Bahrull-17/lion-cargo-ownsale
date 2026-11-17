@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { ROUTES } from "../config/routes";
 import { DESTINATION_PAGES } from "../config/destinations";
 import { formatRupiah, tarifTermurahTujuan } from "../utils/tarif";
 
@@ -43,6 +45,10 @@ export default function RuteTujuanList({ databaseTarif }) {
           </tbody>
         </table>
       </div>
+      <Link to={ROUTES.tarif} className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-700 dark:text-blue-400 hover:underline">
+        Lihat daftar tarif seluruh tujuan
+        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+      </Link>
     </section>
   );
 }

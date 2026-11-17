@@ -38,6 +38,14 @@ export const CEK_ONGKIR_META = buildMeta({
   ogDescription: "Hitung estimasi ongkos kirim cargo udara dari Bandara Soekarno Hatta ke seluruh Indonesia.",
 });
 
+export const TARIF_HUB_META = buildMeta({
+  path: ROUTES.tarif,
+  title: "Tarif Cargo Udara Jakarta ke Seluruh Indonesia | Lion Cargo",
+  description: "Daftar tarif cargo udara per kg dari Bandara Soekarno-Hatta (CGK) ke kota-kota di Indonesia: tarif, minimal berat, estimasi, dan cara hitung ongkir.",
+  ogTitle: "Tarif Cargo Udara Jakarta ke Seluruh Indonesia | Lion Cargo Ownsale",
+  ogDescription: "Daftar tarif cargo udara per kg dari Bandara Soekarno-Hatta ke seluruh Indonesia. Cek tarif, estimasi, dan pesan via WhatsApp.",
+});
+
 // Metadata halaman tarif per kota, dibuat dari data tarif yang diberikan (Sheet saat build, Sheet/bawaan di browser)
 // sehingga deskripsi selalu sama dengan isi halaman. Mengembalikan null kalau kota tujuan tidak ada di data.
 export function getDestinationMeta({ path, code, kota }, { databaseTarif, pengaturan }) {
@@ -54,4 +62,5 @@ export function getDestinationMeta({ path, code, kota }, { databaseTarif, pengat
 export const PAGE_META_BY_PATH = {
   [ROUTES.home]: HOME_META,
   [ROUTES.cekOngkir]: CEK_ONGKIR_META,
+  [ROUTES.tarif]: TARIF_HUB_META,
 };

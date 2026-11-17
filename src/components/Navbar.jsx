@@ -42,7 +42,7 @@ export default function Navbar() {
           </Link>
 
           {/* Menu Desktop */}
-          <nav className="hidden md:flex items-center space-x-8" aria-label="Menu utama">
+          <nav className="hidden lg:flex items-center space-x-8" aria-label="Menu utama">
             {NAV_ITEMS.map((item) => {
               const isActive = activeMenu === item.key;
               return (
@@ -63,7 +63,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             <ThemeToggle
               isDark={isDark}
               onToggle={toggle}
@@ -80,7 +80,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="flex md:hidden items-center space-x-2.5">
+          <div className="flex lg:hidden items-center space-x-2.5">
             <ThemeToggle
               isDark={isDark}
               onToggle={toggle}
@@ -109,7 +109,7 @@ export default function Navbar() {
       </div>
 
       {isMobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl border-b border-white/20 dark:border-slate-800/50 px-4 pt-3 pb-6 space-y-2 transition-colors shadow-2xl">
+        <div id="mobile-menu" className="lg:hidden bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl border-b border-white/20 dark:border-slate-800/50 px-4 pt-3 pb-6 space-y-2 transition-colors shadow-2xl">
           <nav aria-label="Menu utama (mobile)" className="space-y-2">
             {NAV_ITEMS.map((item) => {
               const isActive = activeMenu === item.key;

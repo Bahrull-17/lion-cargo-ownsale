@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import AirlinePartners from "./components/AirlinePartners";
 import Services from "./components/Services";
+import TarifRute from "./components/TarifRute";
 import FlyingPlaneBanner from "./components/FlyingPlaneBanner";
 import AboutUs from "./components/AboutUs";
 import Features from "./components/Features";
@@ -18,6 +19,7 @@ import Contact from "./components/Contact";
 
 // Halaman terpisah
 import CekOngkirPage from "./pages/CekOngkirPage";
+import TarifHubPage from "./pages/TarifHubPage";
 import RuteCargoPage from "./pages/RuteCargoPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ROUTES } from "./config/routes";
@@ -62,6 +64,7 @@ function HomePage() {
       <Hero />
       <AirlinePartners />
       <Services />
+      <TarifRute />
       <FlyingPlaneBanner />
       <AboutUs />
       <Features />
@@ -81,6 +84,7 @@ export default function App() {
       <Routes>
         <Route path={ROUTES.home} element={<HomePage />} />
         <Route path={ROUTES.cekOngkir} element={<CekOngkirPage />} />
+        <Route path={ROUTES.tarif} element={<TarifHubPage />} />
         {DESTINATION_PAGES.map((destination) => (
           <Route key={destination.code} path={destination.path} element={<RuteCargoPage destination={destination} />} />
         ))}
