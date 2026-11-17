@@ -6,6 +6,7 @@ export const SITE = {
   phoneDisplay: "+62 852-8558-6828",
   phoneHref: "tel:+6285285586828",
   email: "admin@lioncargoownsale.com",
+  hours: "Senin - Minggu: 24 Jam (Tanpa Libur)",
 
   address: {
     place: "Gedung PT Gatrans (Area Kargo Bandara Soekarno-Hatta)",

@@ -61,7 +61,11 @@ export default function TarifRute() {
           </h2>
 
           <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Pilih kota tujuan untuk melihat tarif per kg, estimasi waktu, minimal berat, dan contoh perhitungan ongkir cargo udara dari Bandara Soekarno-Hatta.
+            Pilih kota tujuan untuk melihat tarif per kg, estimasi waktu, minimal berat, dan contoh perhitungan ongkir cargo udara dari Bandara Soekarno-Hatta. Lokasi dan cara memesan ada di halaman{" "}
+            <Link to={ROUTES.lionCargoBandara} className="font-semibold text-blue-700 dark:text-blue-400 hover:underline">
+              Lion Cargo Bandara Soekarno-Hatta
+            </Link>
+            .
           </p>
         </div>
 

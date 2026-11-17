@@ -16,7 +16,7 @@ const SSR_ENTRY = path.join(__dirname, "..", "dist-server", "entry-server.js");
 // Semua rute yang dibuatkan file HTML sendiri berisi konten asli (bukan <div id="root"></div> kosong).
 // Daftar ini juga menjadi isi sitemap.xml. Kota tujuan baru cukup ditambahkan di src/config/destinations.js;
 // halaman statis baru ditambahkan di sini dan di src/config/routes.js + pageMeta.js.
-const ROUTES_TO_PRERENDER = [ROUTES.home, ROUTES.cekOngkir, ROUTES.tarif, ...DESTINATION_PATHS];
+const ROUTES_TO_PRERENDER = [ROUTES.home, ROUTES.cekOngkir, ROUTES.tarif, ROUTES.lionCargoBandara, ...DESTINATION_PATHS];
 
 const ROOT_PLACEHOLDER = '<div id="root"></div>';
 

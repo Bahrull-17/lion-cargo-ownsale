@@ -14,6 +14,7 @@ export const FOOTER_LINKS = [
   { label: "Layanan Kargo", to: sectionPath(SECTION_IDS.services) },
   { label: "Cek Ongkir", to: ROUTES.cekOngkir },
   { label: "Tarif Semua Kota", to: ROUTES.tarif },
+  { label: "Lion Cargo Bandara Soekarno-Hatta", to: ROUTES.lionCargoBandara },
   { label: "Tentang Kami", to: sectionPath(SECTION_IDS.about) },
   { label: "Lokasi & Kontak", to: sectionPath(SECTION_IDS.contact) },
 ];

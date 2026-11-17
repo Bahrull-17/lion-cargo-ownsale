@@ -2,6 +2,7 @@ export const ROUTES = {
   home: "/",
   cekOngkir: "/cek-ongkir",
   tarif: "/tarif-cargo-udara",
+  lionCargoBandara: "/lion-cargo-bandara-soekarno-hatta",
 };
 
 export const SECTION_IDS = {

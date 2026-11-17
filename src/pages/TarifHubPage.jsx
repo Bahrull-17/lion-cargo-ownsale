@@ -275,6 +275,13 @@ export default function TarifHubPage() {
         <section className="rounded-3xl bg-linear-to-br from-blue-900 via-blue-950 to-slate-900 border border-blue-800/40 shadow-2xl shadow-blue-950/20 p-6 sm:p-8 text-center space-y-4">
           <h2 className="text-lg sm:text-xl font-bold text-white">Kota Anda belum ada di daftar?</h2>
           <p className="text-sm text-slate-300 leading-relaxed max-w-xl mx-auto">Tanyakan ketersediaan rute dan tarif terbaru langsung ke admin. Sertakan kota tujuan, berat, dan jenis barang agar jawabannya lebih cepat.</p>
+          <p className="text-sm text-slate-300">
+            Butuh alamat dan jam operasional? Lihat{" "}
+            <Link to={ROUTES.lionCargoBandara} className="font-semibold text-white underline underline-offset-2">
+              Lion Cargo Bandara Soekarno-Hatta
+            </Link>
+            .
+          </p>
           <a
             href={whatsappLink("Halo Admin, saya ingin tanya tarif dan ketersediaan rute cargo udara ke kota tujuan saya.")}
             target="_blank"

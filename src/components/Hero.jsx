@@ -21,11 +21,11 @@ export default function Hero() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.2] sm:leading-[1.15]">
-              Solusi Pengiriman Cargo Udara <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-900 dark:from-blue-400 dark:to-blue-600">Bandara Soekarno Hatta</span>
+              Jasa Cargo Udara dari <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-900 dark:from-blue-400 dark:to-blue-600">Bandara Soekarno-Hatta</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Sebagai mitra resmi <strong className="font-bold text-slate-600 dark:text-white">Lion Cargo Ownsale</strong>, kami menghadirkan solusi pengiriman barang via{" "}
+              Sebagai <strong className="font-bold text-slate-600 dark:text-white">agen resmi Lion Cargo</strong>, Lion Cargo Ownsale menghadirkan solusi pengiriman barang via{" "}
               <strong className="font-bold text-slate-600 dark:text-white">Bandara Soekarno Hatta</strong> (CGK) ke seluruh Indonesia. Nikmati layanan cek ongkir cepat, pengiriman aman, dan solusi logistik untuk kebutuhan bisnis maupun
               pribadi Anda.
             </p>

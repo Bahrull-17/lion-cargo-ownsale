@@ -20,6 +20,7 @@ import Contact from "./components/Contact";
 // Halaman terpisah
 import CekOngkirPage from "./pages/CekOngkirPage";
 import TarifHubPage from "./pages/TarifHubPage";
+import LionCargoBandaraPage from "./pages/LionCargoBandaraPage";
 import RuteCargoPage from "./pages/RuteCargoPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ROUTES } from "./config/routes";
@@ -85,6 +86,7 @@ export default function App() {
         <Route path={ROUTES.home} element={<HomePage />} />
         <Route path={ROUTES.cekOngkir} element={<CekOngkirPage />} />
         <Route path={ROUTES.tarif} element={<TarifHubPage />} />
+        <Route path={ROUTES.lionCargoBandara} element={<LionCargoBandaraPage />} />
         {DESTINATION_PAGES.map((destination) => (
           <Route key={destination.code} path={destination.path} element={<RuteCargoPage destination={destination} />} />
         ))}
