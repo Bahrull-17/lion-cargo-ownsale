@@ -4,6 +4,7 @@ import { Plane, ChevronRight, ChevronDown, Search, Calculator, MessageCircle } f
 import JsonLd from "../components/JsonLd";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import useTarifData from "../hooks/useTarifData";
+import TarifDiperbarui from "../components/TarifDiperbarui";
 import { TARIF_HUB_META } from "../config/pageMeta";
 import { ROUTES } from "../config/routes";
 import { SITE, whatsappLink } from "../config/site";
@@ -73,7 +74,7 @@ function TabelTarif({ judul, baris, beratMinimum }) {
 export default function TarifHubPage() {
   useDocumentMeta(TARIF_HUB_META);
 
-  const { databaseTarif, pengaturan } = useTarifData();
+  const { databaseTarif, pengaturan, diperbaruiPada } = useTarifData();
   const [kueri, setKueri] = useState("");
   const [bukaLainnya, setBukaLainnya] = useState(false);
 
@@ -187,6 +188,7 @@ export default function TarifHubPage() {
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
             {`Daftar tarif cargo udara Lion Cargo Ownsale dari Bandara Soekarno-Hatta (CGK) ke ${jumlahTujuan} kota tujuan: ${formatRupiah(termurah.rate)} sampai ${formatRupiah(termahal.rate)} per kg, minimal ${pengaturan.beratMinimum} kg, estimasi ${pengaturan.estimasiWaktu}.`}
           </p>
+          <TarifDiperbarui tanggal={diperbaruiPada} className="justify-center" />
         </header>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-4">

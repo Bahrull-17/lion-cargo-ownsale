@@ -21,8 +21,8 @@ function parseCsv(url) {
 // dan tampilan pertama pengunjung sama-sama memuat tarif Sheet, tanpa menunggu unduhan.
 function stateAwal() {
   const dariBuild = globalThis.__TARIF_DATA__;
-  if (dariBuild) return { databaseTarif: dariBuild.databaseTarif, pengaturan: dariBuild.pengaturan, loading: false, isFallback: false };
-  return { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: true, isFallback: false };
+  if (dariBuild) return { databaseTarif: dariBuild.databaseTarif, pengaturan: dariBuild.pengaturan, loading: false, isFallback: false, diperbaruiPada: dariBuild.diperbaruiPada ?? null };
+  return { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: true, isFallback: false, diperbaruiPada: null };
 }
 
 /**
@@ -48,15 +48,19 @@ export default function useTarifData() {
         if (batal) return;
 
         if (tarifValid.length === 0) {
-          setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanValid, loading: false, isFallback: true } : sebelumnya));
+          setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanValid, loading: false, isFallback: true, diperbaruiPada: null } : sebelumnya));
           return;
         }
 
-        setState({ databaseTarif: tarifValid, pengaturan: pengaturanValid, loading: false, isFallback: false });
+        // Tanggal dari build hanya dipertahankan kalau data terbaru identik dengan data build; kalau Sheet sudah berubah, tanggalnya tidak lagi benar.
+        setState((sebelumnya) => {
+          const sama = JSON.stringify([tarifValid, pengaturanValid]) === JSON.stringify([sebelumnya.databaseTarif, sebelumnya.pengaturan]);
+          return { databaseTarif: tarifValid, pengaturan: pengaturanValid, loading: false, isFallback: false, diperbaruiPada: sama ? sebelumnya.diperbaruiPada : null };
+        });
       } catch (err) {
         if (batal) return;
         console.error("Gagal memuat data tarif dari Google Sheets:", err);
-        setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: false, isFallback: true } : sebelumnya));
+        setState((sebelumnya) => (sebelumnya.loading ? { databaseTarif: tarifBawaan, pengaturan: pengaturanBawaan, loading: false, isFallback: true, diperbaruiPada: null } : sebelumnya));
       }
     }
 

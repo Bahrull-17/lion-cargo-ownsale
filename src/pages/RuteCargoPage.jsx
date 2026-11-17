@@ -4,6 +4,7 @@ import { Plane, ChevronRight, ArrowRight } from "lucide-react";
 import JsonLd from "../components/JsonLd";
 import useDocumentMeta from "../hooks/useDocumentMeta";
 import useTarifData from "../hooks/useTarifData";
+import TarifDiperbarui from "../components/TarifDiperbarui";
 import { getDestinationMeta } from "../config/pageMeta";
 import { ROUTES } from "../config/routes";
 import { SITE, whatsappLink } from "../config/site";
@@ -37,7 +38,7 @@ function buatFaq({ kota, tarif, pengaturan }) {
 
 export default function RuteCargoPage({ destination }) {
   const { kota, code, provinsi, wilayah, bandara, path } = destination;
-  const { databaseTarif, pengaturan } = useTarifData();
+  const { databaseTarif, pengaturan, diperbaruiPada } = useTarifData();
   const meta = useMemo(() => getDestinationMeta(destination, { databaseTarif, pengaturan }), [destination, databaseTarif, pengaturan]);
   useDocumentMeta(meta);
 
@@ -192,6 +193,7 @@ export default function RuteCargoPage({ destination }) {
           <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
             {`Tarif dasar ${formatRupiah(rate)} per kg, minimal ${pengaturan.beratMinimum} kg. Tarif dapat berubah sewaktu-waktu; hubungi admin untuk konfirmasi.`}
           </p>
+          <TarifDiperbarui tanggal={diperbaruiPada} />
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
             <a
               href={whatsappLink(`Halo Admin, saya ingin kirim cargo udara Jakarta ke ${kota} (${code}). Mohon info tarif dan prosesnya.`)}

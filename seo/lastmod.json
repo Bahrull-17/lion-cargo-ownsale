@@ -1,0 +1,116 @@
+{
+  "tarif": {
+    "hash": "92a49ff6b6106693",
+    "diubah": "2026-11-17"
+  },
+  "halaman": {
+    "/": {
+      "hash": "86548086add9c31a",
+      "diubah": "2026-11-17"
+    },
+    "/cek-ongkir": {
+      "hash": "5219fcc70f7ded2f",
+      "diubah": "2026-11-17"
+    },
+    "/tarif-cargo-udara": {
+      "hash": "66c3f87b091fad6c",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-surabaya": {
+      "hash": "dc231573dd97266e",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-makassar": {
+      "hash": "a4efd3927c295924",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-medan": {
+      "hash": "fb6b1d00f5f6f4f2",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-bali": {
+      "hash": "1146f5d7988ca2c3",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-balikpapan": {
+      "hash": "0ad07c3bb57fec2a",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-banjarmasin": {
+      "hash": "9cd7983c51516959",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-palembang": {
+      "hash": "3cb4df6544ef9108",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-pekanbaru": {
+      "hash": "09f4abab8ff2b169",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-padang": {
+      "hash": "3be247866978d778",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-batam": {
+      "hash": "c94aab71ba3d78e4",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-manado": {
+      "hash": "2cc594ad3524a15c",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-pontianak": {
+      "hash": "4bafc96b53b72e01",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-yogyakarta": {
+      "hash": "51045d05e5b1150a",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-semarang": {
+      "hash": "6bb88d5e41eadb7b",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-solo": {
+      "hash": "a864071079df7a22",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-malang": {
+      "hash": "b5cbfd713570791a",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-lombok": {
+      "hash": "8ea2941dd24accfe",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-kupang": {
+      "hash": "5459810442d1af7d",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-samarinda": {
+      "hash": "62f2857e3edeb367",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-bandar-lampung": {
+      "hash": "d84308d5d67f7afe",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-jambi": {
+      "hash": "2097b66a0bfb034d",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-banda-aceh": {
+      "hash": "33b579b94bfa309d",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-jayapura": {
+      "hash": "d9891ca5a0f2c808",
+      "diubah": "2026-11-17"
+    },
+    "/cargo-udara-jakarta-ambon": {
+      "hash": "f23f875c2f4db647",
+      "diubah": "2026-11-17"
+    }
+  }
+}

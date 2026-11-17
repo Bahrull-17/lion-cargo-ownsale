@@ -5,10 +5,6 @@ import { formatRupiah, tarifTermurahTujuan } from "../utils/tarif.js";
 const OG_IMAGE = `${SITE.url}/Ownsalelogo.png`;
 const DEFAULT_ROBOTS = "index, follow, max-image-preview:large";
 
-// Tanggal terakhir teks Beranda berubah (dipakai sebagai <lastmod> Beranda di sitemap.xml yang dibuat saat build).
-// Perbarui manual saat isi Beranda berubah. Halaman yang bergantung pada tarif memakai tanggal build.
-export const LAST_MODIFIED = "2026-11-03";
-
 function buildMeta({ path, title, description, ogTitle = title, ogDescription = description }) {
   return {
     title,
