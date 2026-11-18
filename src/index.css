@@ -27,3 +27,97 @@ html.dark body {
   background-color: #020617; /* slate-950 */
   color: #f1f5f9; /* slate-100 */
 }
+
+/* Animasi ringan untuk halaman cargo (src/components/cargo). Semuanya mati untuk pengunjung yang memilih "kurangi gerakan". */
+.cg-reveal {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.cg-reveal[data-reveal="hidden"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+@keyframes cg-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes cg-drift {
+  from {
+    transform: translateX(-18px);
+  }
+  to {
+    transform: translateX(18px);
+  }
+}
+@keyframes cg-dash {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+@keyframes cg-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+@keyframes cg-travel {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+.cg-float {
+  animation: cg-float 6s ease-in-out infinite;
+}
+.cg-float-b {
+  animation: cg-float 7.5s ease-in-out -2s infinite;
+}
+.cg-drift {
+  animation: cg-drift 14s ease-in-out infinite alternate;
+}
+.cg-drift-b {
+  animation: cg-drift 19s ease-in-out -6s infinite alternate;
+}
+.cg-dash {
+  stroke-dasharray: 5 7;
+  animation: cg-dash 3s linear infinite;
+}
+.cg-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: cg-pulse 2.6s ease-in-out infinite;
+}
+.cg-travel {
+  animation: cg-travel 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cg-reveal {
+    transition: none;
+  }
+  .cg-reveal[data-reveal="hidden"] {
+    opacity: 1;
+    transform: none;
+  }
+  .cg-float,
+  .cg-float-b,
+  .cg-drift,
+  .cg-drift-b,
+  .cg-dash,
+  .cg-pulse,
+  .cg-travel {
+    animation: none;
+  }
+}

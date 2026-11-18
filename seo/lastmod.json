@@ -5,111 +5,115 @@
   },
   "halaman": {
     "/": {
-      "hash": "86548086add9c31a",
+      "hash": "2b96c81c43108eca",
       "diubah": "2026-11-17"
     },
     "/cek-ongkir": {
-      "hash": "5219fcc70f7ded2f",
+      "hash": "9c6f432cbe46ebb7",
       "diubah": "2026-11-17"
     },
     "/tarif-cargo-udara": {
-      "hash": "66c3f87b091fad6c",
-      "diubah": "2026-11-17"
+      "hash": "01bdee449e6414fd",
+      "diubah": "2026-11-18"
+    },
+    "/lion-cargo-bandara-soekarno-hatta": {
+      "hash": "2275f026b95a13e1",
+      "diubah": "2026-11-18"
     },
     "/cargo-udara-jakarta-surabaya": {
-      "hash": "dc231573dd97266e",
+      "hash": "b4dce79b0b94305f",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-makassar": {
-      "hash": "a4efd3927c295924",
+      "hash": "36be063264cacccd",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-medan": {
-      "hash": "fb6b1d00f5f6f4f2",
+      "hash": "4be9c369ba832109",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-bali": {
-      "hash": "1146f5d7988ca2c3",
+      "hash": "c7222094800c91e7",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-balikpapan": {
-      "hash": "0ad07c3bb57fec2a",
+      "hash": "b84f81b4c5b7ef0e",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-banjarmasin": {
-      "hash": "9cd7983c51516959",
+      "hash": "3367365329b56197",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-palembang": {
-      "hash": "3cb4df6544ef9108",
+      "hash": "c0a4782fc9c5184e",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-pekanbaru": {
-      "hash": "09f4abab8ff2b169",
+      "hash": "b9a9959844be2d7c",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-padang": {
-      "hash": "3be247866978d778",
+      "hash": "c3d9330d621735a6",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-batam": {
-      "hash": "c94aab71ba3d78e4",
+      "hash": "98afb89dc2543880",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-manado": {
-      "hash": "2cc594ad3524a15c",
+      "hash": "113441db2351a1bf",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-pontianak": {
-      "hash": "4bafc96b53b72e01",
+      "hash": "f276f5c323cf07be",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-yogyakarta": {
-      "hash": "51045d05e5b1150a",
+      "hash": "eed728e8914ceaef",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-semarang": {
-      "hash": "6bb88d5e41eadb7b",
+      "hash": "a25afbccf6990ad5",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-solo": {
-      "hash": "a864071079df7a22",
+      "hash": "384b9b3aa653820e",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-malang": {
-      "hash": "b5cbfd713570791a",
+      "hash": "68c751eb76403dac",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-lombok": {
-      "hash": "8ea2941dd24accfe",
+      "hash": "c8e546ecaece08d2",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-kupang": {
-      "hash": "5459810442d1af7d",
+      "hash": "94d277460094d861",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-samarinda": {
-      "hash": "62f2857e3edeb367",
+      "hash": "3c79e2fd42b235c9",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-bandar-lampung": {
-      "hash": "d84308d5d67f7afe",
+      "hash": "491a79ce7c9241cf",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-jambi": {
-      "hash": "2097b66a0bfb034d",
+      "hash": "cf8626368ca37a9c",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-banda-aceh": {
-      "hash": "33b579b94bfa309d",
+      "hash": "680e0c26be73ed76",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-jayapura": {
-      "hash": "d9891ca5a0f2c808",
+      "hash": "d4d1fef9dec4530e",
       "diubah": "2026-11-17"
     },
     "/cargo-udara-jakarta-ambon": {
-      "hash": "f23f875c2f4db647",
+      "hash": "68575d7338bc240e",
       "diubah": "2026-11-17"
     }
   }
