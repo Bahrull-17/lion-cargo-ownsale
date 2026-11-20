@@ -3,6 +3,7 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
+import { mulaiAnalytics } from "./lib/analytics";
 
 const app = (
   <StrictMode>
@@ -11,6 +12,8 @@ const app = (
     </BrowserRouter>
   </StrictMode>
 );
+
+mulaiAnalytics(); // no-op kalau Measurement ID belum diisi (config/site.js)
 
 const rootElement = document.getElementById("root");
 

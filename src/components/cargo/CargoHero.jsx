@@ -4,7 +4,7 @@ import { GRADASI } from "./gaya";
 // `overlay` = elemen melayang di atas ilustrasi (lihat KepingMelayang).
 export default function CargoHero({ breadcrumb, badge, judul, judulSorot, deskripsi, tambahan, aksi, adegan, overlay }) {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-blue-50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
+    <section data-lokasi="hero" className="relative overflow-hidden bg-linear-to-b from-blue-50 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
       <div className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full bg-blue-300/25 blur-[110px] dark:bg-blue-600/10" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:pb-16">
         {breadcrumb}

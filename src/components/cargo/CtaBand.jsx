@@ -6,7 +6,7 @@ import { TOMBOL_PUTIH, TOMBOL_WA } from "./gaya";
 // Pita ajakan di akhir halaman. `utama` = { label, to } (tautan internal), `sekunder` = { label, href } (WhatsApp).
 export default function CtaBand({ judul, deskripsi, utama, sekunder, catatan }) {
   return (
-    <section className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-blue-700 via-blue-800 to-indigo-900 px-6 py-10 text-center shadow-2xl shadow-blue-900/25 sm:px-12 sm:py-14">
+    <section data-lokasi="cta-akhir" className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-blue-700 via-blue-800 to-indigo-900 px-6 py-10 text-center shadow-2xl shadow-blue-900/25 sm:px-12 sm:py-14">
       <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl" aria-hidden="true" />
       <PesawatHiasan className="cg-float pointer-events-none absolute -bottom-3 -right-6 hidden w-64 opacity-25 sm:block" />
       <div className="relative z-10 mx-auto max-w-xl space-y-4">

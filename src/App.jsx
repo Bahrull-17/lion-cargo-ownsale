@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Routes, Route, useLocation, useNavigationType } from "react-router-dom";
 
 // Layout utama
+import usePageViewAnalytics from "./hooks/usePageViewAnalytics";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -77,6 +78,7 @@ function HomePage() {
 }
 
 export default function App() {
+  usePageViewAnalytics();
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
       <ScrollManager />

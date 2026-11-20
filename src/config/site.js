@@ -5,6 +5,11 @@ export const SITE = {
   whatsapp: "6285285586828", // format internasional tanpa "+"
   phoneDisplay: "+62 852-8558-6828",
   phoneHref: "tel:+6285285586828",
+
+  // Google Analytics 4: isi dengan Measurement ID dari GA (format G-XXXXXXXXXX).
+  // Kosong = pelacakan mati, tidak ada skrip Google yang dimuat.
+  gaMeasurementId: "G-TMTCYL46C6",
+
   email: "admin@lioncargoownsale.com",
   hours: "Senin - Minggu: 24 Jam (Tanpa Libur)",
 
